@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet} from 'react-native';
+import HomeHeader from '../components/headers/HomeHeader.js';
 
 function HomeScreen() {
     return (
         <View style={styles.container}>
-            <Text>Home Screen Baby</Text>
+            <HomeHeader/>
         </View>
     );
 }
