@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet} from 'react-native';
+// import { StatusBar } from 'expo-status-bar';
+import { View, StyleSheet, StatusBar, SafeAreaView} from 'react-native';
 import HomeHeader from '../components/headers/HomeHeader.js';
 
 function HomeScreen() {
@@ -12,10 +13,9 @@ function HomeScreen() {
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'flex-start',
-        backgroundColor: '#000',
+        flex: 1,
+        backgroundColor: '#000000',
+        paddingTop: 30,
     },
 });
 

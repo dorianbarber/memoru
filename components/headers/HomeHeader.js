@@ -6,7 +6,7 @@ function HomeHeader() {
     return (
         <Header
             leftComponent={{ text: 'Notes', style:styles.title }}
-            rightComponent={{ icon: 'home', color: '#fff' }}
+            rightComponent={{ icon: 'settings', color: '#fff' }}
             containerStyle={styles.header}        
         />
     );
