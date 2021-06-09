@@ -1,5 +1,5 @@
 import React from 'react';
-import { Share, TouchableNativeFeedback } from 'react-native';
+import { View, Share, TouchableNativeFeedback, StyleSheet } from 'react-native';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 
 const ShareButton = (props) => {
@@ -23,10 +23,23 @@ const ShareButton = (props) => {
   };
 
   return (
-    <TouchableNativeFeedback onPress={onShare}>
-      <EntypoIcon name='share' size={20} color='white'/>
+    <TouchableNativeFeedback 
+      onPress={onShare}
+      background={TouchableNativeFeedback.Ripple('#696969', true)}
+    >
+      <View style={styles.touchable}>
+        <EntypoIcon name='share' size={20} color='white' />
+      </View>
     </TouchableNativeFeedback>
   );
 };
+
+const styles = StyleSheet.create({
+  touchable: {
+    flex: 1,
+    alignContent: 'center',
+    justifyContent: 'center',
+  },
+});
 
 export default ShareButton;
