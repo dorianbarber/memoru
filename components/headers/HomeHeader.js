@@ -1,16 +1,27 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { StyleSheet } from 'react-native';
 import { Header } from 'react-native-elements';
+
 import MenuIcon from '../headerComponents/MenuIcon.js';
+
 import HeaderText from '../headerComponents/HeaderText.js';
 import HeaderButtons from '../headerComponents/HeaderButtons.js';
 
 
 function HomeHeader() {
+  const [title, setTitle] = useState('')
+
+  useEffect(() => {
+    setTitle('Memoru')
+    return () => {
+      setTitle('')
+    }
+  }, [])
+
   return (
     <Header
       leftComponent={MenuIcon}
-      centerComponent={<HeaderText text='Memoru'/>}
+      centerComponent={<HeaderText title={title} setTitle={setTitle}/>}
       rightComponent={HeaderButtons}
       containerStyle={styles.header}
     />

@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Share, TouchableNativeFeedback, StyleSheet } from 'react-native';
+
 import EntypoIcon from 'react-native-vector-icons/Entypo';
+
 
 const ShareButton = (props) => {
   const onShare = async () => {
@@ -36,9 +38,9 @@ const ShareButton = (props) => {
 
 const styles = StyleSheet.create({
   touchable: {
-    flex: 1,
     alignContent: 'center',
     justifyContent: 'center',
+
   },
 });
 

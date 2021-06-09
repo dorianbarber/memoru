@@ -1,6 +1,7 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { View, StyleSheet } from 'react-native';
+
+import { StatusBar } from 'expo-status-bar';
 import HomeHeader from '../components/headers/HomeHeader.js';
 
 function HomeScreen() {
