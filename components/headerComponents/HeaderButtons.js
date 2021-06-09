@@ -2,12 +2,13 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import FontistoIcon from 'react-native-vector-icons/Fontisto';
+import ShareButton from '../buttons/ShareButton.js';
 
 function HeaderButtons() {
   return (
     <View style={styles.rightSideItems}>
       <FontistoIcon name='search' size={20} color='white' />
-      <EntypoIcon name='share' size={20} color='white' />
+      <ShareButton message='memoru is dope'/>
       <EntypoIcon name='dots-three-vertical' size={20} color='white' />
     </View>
   );
