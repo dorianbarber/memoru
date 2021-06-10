@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { View, TouchableNativeFeedback, StyleSheet } from 'react-native';
+import { View, TouchableNativeFeedback, StyleSheet, Text } from 'react-native';
 
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 
@@ -18,23 +18,19 @@ function OptionsButton() {
 
 
     return (
-        <>
+        <View>
             <TouchableNativeFeedback 
-            onPress={onOptions}
-            background={TouchableNativeFeedback.Ripple('#696969', true)}
-                >
-                <View style={styles.touchable}>
-                    <EntypoIcon name='dots-three-vertical' size={20} color='white' />
-                </View>
+              onPress={onOptions}
+              background={TouchableNativeFeedback.Ripple('#696969', true)}
+            >
+              <View style={styles.touchable}>
+                  <EntypoIcon name='dots-three-vertical' size={20} color='white' />
+              </View>
             </TouchableNativeFeedback>
 
-            {optionsActive ? 
-
-            <OptionsList />
-            
-            :''}
-        </>
-    )
+            {optionsActive ? <OptionsList /> : <Text>{''}</Text>}
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({

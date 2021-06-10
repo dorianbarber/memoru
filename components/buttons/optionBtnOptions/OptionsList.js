@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 function OptionsList() {
     return (
         <View>
-            <Text>Options</Text>
+            <Text>{'Options'}</Text>
         </View>
     )
 }
