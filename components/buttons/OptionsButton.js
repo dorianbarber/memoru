@@ -9,35 +9,37 @@ function OptionsButton() {
     const [optionsActive, setOptionsActive] = useState(false)
 
     const onOptions = () => {
-        if(!optionsActive){
+      if (!optionsActive) {
         setOptionsActive(true)
-        }else{
-         setOptionsActive(false)
-        }
+      } else {
+        setOptionsActive(false)
+      }
     }
 
 
     return (
-        <View>
-            <TouchableNativeFeedback 
-              onPress={onOptions}
-              background={TouchableNativeFeedback.Ripple('#696969', true)}
-            >
-              <View style={styles.touchable}>
-                  <EntypoIcon name='dots-three-vertical' size={20} color='white' />
-              </View>
-            </TouchableNativeFeedback>
-
-            {optionsActive ? <OptionsList /> : <Text>{''}</Text>}
-        </View>
+      <View style={styles.container}>
+        <TouchableNativeFeedback 
+          onPress={onOptions}
+          background={TouchableNativeFeedback.Ripple('#696969', true)}
+        >
+          <View style={styles.touchable}>
+              <EntypoIcon name='dots-three-vertical' size={20} color='white' />
+          </View>
+        </TouchableNativeFeedback>
+        {optionsActive && <OptionsList />}
+      </View>  
     );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+  },
   touchable: {
     alignContent: 'center',
     justifyContent: 'center',
-
   },
 });
 
