@@ -2,10 +2,10 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
-import TemplateHeader from '../components/headers/TemplateHeader.js'
+import TemplateHeader from '../components/headers/TemplateHeader.js';
 
 
-function HomeScreen() {
+function TemplateScreen() {
   return (
     <View style={styles.container}>
       <TemplateHeader/>
@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default TemplateScreen;
