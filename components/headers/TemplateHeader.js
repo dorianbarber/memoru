@@ -31,7 +31,7 @@ function HomeHeader() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: 140,
   },
   header: {
     position: 'relative',
