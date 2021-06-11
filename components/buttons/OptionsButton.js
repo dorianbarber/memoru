@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import { View, TouchableNativeFeedback, StyleSheet } from 'react-native';
 
 import EntypoIcon from 'react-native-vector-icons/Entypo';
-
 import OptionsList from './optionBtnOptions/OptionsList'
 
 function OptionsButton() {
@@ -28,11 +27,8 @@ function OptionsButton() {
                 </View>
             </TouchableNativeFeedback>
 
-            {optionsActive ? 
-
-            <OptionsList />
+            {optionsActive && <OptionsList setOptionsActive={setOptionsActive} />}
             
-            :''}
         </>
     )
 }
@@ -41,7 +37,6 @@ const styles = StyleSheet.create({
   touchable: {
     alignContent: 'center',
     justifyContent: 'center',
-
   },
 });
 

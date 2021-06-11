@@ -2,10 +2,10 @@ import React, {useState, useEffect} from 'react';
 import { StyleSheet } from 'react-native';
 import { Header } from 'react-native-elements';
 
-import MenuIcon from '../headerComponents/MenuIcon.js';
+import MenuIcon from './headerComponents/MenuIcon';
 
-import HeaderText from '../headerComponents/HeaderText.js';
-import HeaderButtons from '../headerComponents/HeaderButtons.js';
+import HeaderText from './headerComponents/HeaderText.js';
+import HeaderButtons from './headerComponents/HeaderButtons.js';
 
 
 function HomeHeader() {
