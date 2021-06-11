@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Button, FlatList, ScrollView, StyleSheet, TouchableNativeFeedback } from 'react-native';
+import React, { useRef, useState } from 'react';
+import { View, FlatList, StyleSheet, TouchableNativeFeedback } from 'react-native';
 import LabelFormPair from './LabelFormPair.js';
 
 import EntypoIcon from 'react-native-vector-icons/Entypo';
@@ -7,6 +7,8 @@ import EntypoIcon from 'react-native-vector-icons/Entypo';
 function Template() {
   const [templateList, setTemplateList] = useState([{}]);
   const [childId, setChildId] = useState(1);
+
+  const flatList = useRef(null);
 
   const renderItem = ({item, index, _}) => (
     <LabelFormPair key={index} label={item.label} form={item.form}/>
@@ -29,7 +31,8 @@ function Template() {
         data={templateList}
         renderItem={renderItem}
         keyExtractor={item => item.id}
-        contentContainerStyle={{flexGrow: 1}}
+        ref = {flatList}
+        onContentSizeChange={() => flatList.current.scrollToEnd()}
         ListFooterComponent={
           <View style={styles.addButton}>
             <TouchableNativeFeedback
@@ -40,7 +43,8 @@ function Template() {
                 <EntypoIcon name='plus' size={40}/>
               </View>
             </TouchableNativeFeedback>
-          </View>}
+          </View>
+        }
       />
     </View>
   );
@@ -48,18 +52,17 @@ function Template() {
 
 const styles = StyleSheet.create({
   container: {
-    display: 'flex',
+    flex: 1,
     justifyContent: 'center',
-    marginTop: 10,
-    marginBottom: 20,
     alignItems: 'center',
+    marginBottom: 20,
   },
-  addButton: {
+  addButton: { 
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-end',
     marginRight: 15,
-    marginBottom: 30,
+    marginBottom: 10,
   },
 });
 
