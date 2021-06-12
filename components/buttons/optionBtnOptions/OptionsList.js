@@ -1,51 +1,66 @@
 import React, {useState} from 'react'
-import { SafeAreaView, View, FlatList, StyleSheet, Text, TouchableNativeFeedback, TouchableOpacity } from 'react-native';
-import OptionsListItems from './OptionsListItems'
-// import {ListItems} from 'react-native-elements'
-
-
-const listItems = [
-    {
-        option: 'Attach files',
-        id: 'attach-files-key'
-    },
-    {
-        option: 'Save as file',
-        id: 'save-as-file-key'
-    },
-    {
-        option: 'Delete',
-        id: 'delete-key'   
-    },
-    {
-        option: 'Add to favorites',
-        id: 'add-to-favorites-key'   
-    },
-    {
-        option: 'Print',
-        id: 'print-key'   
-    },
-]
-
-
-
+import { SafeAreaView, View, StyleSheet, Text } from 'react-native';
+import {TouchableNativeFeedback} from 'react-native-gesture-handler'
 
 function OptionsList({setOptionsActive}) {
     const [selectedId, setSelectedId] = useState(null)
 
-    const onOptionPress = (e) => {
+    const onOptionPress = (id) => {
         setOptionsActive(false)
-        setSelectedId(e.target.id)
+        console.log(id)
+        setSelectedId(id)
     }
 
 
     return (
         <SafeAreaView style={styles.optionsListContainer}>
-            <FlatList
-                data={listItems}
-                keyExtractor={(item) => item.id.toString()}
-                renderItem={({ item }) => ( <OptionsListItems onOptionPress={onOptionPress} item={item}/>)}
-            />
+            
+        
+            <TouchableNativeFeedback
+            onPress={() => onOptionPress('attach-files-key')}
+            background={TouchableNativeFeedback.Ripple('#696969', true)}
+            > 
+            <View style={styles.item} id='attach-files-key'>
+                    <Text style={styles.optionName} >Attach files</Text>
+            </View>
+            </TouchableNativeFeedback>
+            
+            <TouchableNativeFeedback
+            onPress={() => onOptionPress('save-as-file-key')}
+            background={TouchableNativeFeedback.Ripple('#696969', true)}
+            > 
+                <View style={styles.item}>
+                    <Text style={styles.optionName} id='save-as-file-key'>Save as file</Text>
+                </View>
+            </TouchableNativeFeedback>
+
+            <TouchableNativeFeedback
+            onPress={() => onOptionPress('delete-key')}
+            background={TouchableNativeFeedback.Ripple('#696969', true)}
+            > 
+                <View style={styles.item}>
+                    <Text style={styles.optionName} id='delete-key'>Delete</Text>
+                </View>
+            </TouchableNativeFeedback>
+
+            <TouchableNativeFeedback
+            onPress={() => onOptionPress('add-to-favorites-key')}
+            background={TouchableNativeFeedback.Ripple('#696969', true)}
+            > 
+                <View style={styles.item}>
+                    <Text style={styles.optionName} id='add-to-favorites-key'>Add to favorites</Text>
+                </View>
+            </TouchableNativeFeedback>
+
+            <TouchableNativeFeedback
+            onPress={() => onOptionPress('print-key')}
+            background={TouchableNativeFeedback.Ripple('#696969', true)}
+            > 
+                <View style={styles.item}>
+                    <Text style={styles.optionName} id='print-key'>Print</Text>
+                </View>
+            </TouchableNativeFeedback>
+
         </SafeAreaView>
     )
 }
@@ -61,8 +76,21 @@ const styles = StyleSheet.create({
         borderRadius:10,
         borderWidth: 3,
         borderColor: '#323232',
-        zIndex: 1,
+        flex: 1,
+
+        // elevation: 20,
     },
+    item:{
+        padding: 15,
+        backgroundColor: '#323232',
+        borderBottomColor: 'black',
+        borderBottomWidth: 2,
+    },
+    optionName: {
+        color: 'white',
+        fontSize: 13,
+    }
+
 });
 
 export default OptionsList
