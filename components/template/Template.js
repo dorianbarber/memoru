@@ -13,8 +13,9 @@ function Template() {
   const flatList = useRef(null);
 
   const updateField = (index, label, form) => {
-    templateList[index] = { index: index, label: label, form: form };
-    setTemplateList(templateList);
+    var newTemplateList = JSON.parse(JSON.stringify(templateList));
+    newTemplateList[index] = { index: index, label: label, form: form };
+    setTemplateList(newTemplateList);
   }
  
   const renderItem = ({item, x, y}) => (

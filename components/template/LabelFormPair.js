@@ -1,32 +1,26 @@
-import React, { useState } from 'react';
-import { StyleSheet, TextInput, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
 import FormPicker from './FormPicker.js';
+import LabelInput from './LabelInput.js';
 
 function LabelFormPair({ index, label, form, onChange }) {
-  const [labelInput, setLabelInput] = useState(label);
-  const [selectedForm, setSelectedForm] = useState(form);
 
   const handleLabelChange = (newLabel) => {
-    onChange(index, newLabel, selectedForm);
-    setLabelInput(newLabel);
+    onChange(index, newLabel, form);
   };
 
   const handleFormPickerChange = (newForm) => {
-    onChange(index, labelInput, newForm);
-    setSelectedForm(selectedForm);
+    onChange(index, label, newForm);
   }
 
   return (
     <View style={styles.container}>
-      <TextInput
-        style={styles.label}
-        onChangeText={handleLabelChange}
-        value={labelInput}
-        placeholder='Label'
-        placeholderTextColor='#696969'
+      <LabelInput
+        label={label}
+        onChange={handleLabelChange}
       />
       <FormPicker 
-        form={selectedForm} 
+        form={form} 
         onChange={handleFormPickerChange}
       />
     </View>
@@ -43,13 +37,6 @@ const styles = StyleSheet.create({
     borderColor: '#696969',
     width: 325,
     margin: 10,
-  },
-  label: {
-    width: 150,
-    fontSize: 15,
-    paddingLeft: 10,
-    borderRightWidth: 1,
-    borderColor: '#696969',
   },
 });
 

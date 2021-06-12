@@ -1,20 +1,13 @@
-import React, { useState } from 'react';
-import { Picker, StyleSheet, View } from 'react-native';
+import React from 'react';
+import { Picker, StyleSheet } from 'react-native';
 //import { Picker } from '@react-native-picker/picker';
 
 function FormPicker({ form, onChange }) {
-  const [selectedForm, setSelectedForm] = useState(form);
-
-  const handleChange = (newForm) => {
-    onChange(newForm);
-    setSelectedForm(newForm);
-  };
-
   return (
     <Picker
       style={styles.picker}
-      selectedValue={selectedForm}
-      onValueChange={(itemValue, _) => handleChange(itemValue)}
+      selectedValue={form}
+      onValueChange={(itemValue, _) => onChange(itemValue)}
       mode='dropdown'
     >
       <Picker.Item label='Text' value='text'/>
