@@ -4,23 +4,34 @@ import LabelFormPair from './LabelFormPair.js';
 
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 
+const baseLabel = '';
+const baseForm = 'text';
+
 function Template() {
-  const [templateList, setTemplateList] = useState([{}]);
-  const [childId, setChildId] = useState(1);
+  const [templateList, setTemplateList] = useState([{ index: 0, label: baseLabel, form: baseForm }]);
 
   const flatList = useRef(null);
 
-  const renderItem = ({item, index, _}) => (
-    <LabelFormPair key={index} label={item.label} form={item.form}/>
+  const updateField = (index, label, form) => {
+    templateList[index] = { index: index, label: label, form: form };
+    setTemplateList(templateList);
+  }
+ 
+  const renderItem = ({item, x, y}) => (
+    <LabelFormPair 
+      index={item.index} 
+      label={item.label} 
+      form={item.form} 
+      onChange={updateField}
+    />
   );
 
   const addField = () => {
-    const newId = childId;
-    setChildId(newId + 1);
+    const newIndex = templateList[templateList.length - 1]["index"] + 1;
     const newTemplateList = templateList.concat({
-      id: newId.toString(),
-      label: '',
-      form: 'Text',
+      index: newIndex,
+      label: baseLabel,
+      form: baseForm,
     });
     setTemplateList(newTemplateList);
   };
@@ -30,8 +41,8 @@ function Template() {
       <FlatList
         data={templateList}
         renderItem={renderItem}
-        keyExtractor={item => item.id}
-        ref = {flatList}
+        ref={flatList}
+        keyExtractor={(item, _) => item.index.toString()}
         onContentSizeChange={() => flatList.current.scrollToEnd()}
         ListFooterComponent={
           <View style={styles.addButton}>

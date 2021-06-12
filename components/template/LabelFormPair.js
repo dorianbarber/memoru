@@ -2,19 +2,33 @@ import React, { useState } from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 import FormPicker from './FormPicker.js';
 
-function LabelFormPair() {
-  const [label, setLabel] = useState('');
+function LabelFormPair({ index, label, form, onChange }) {
+  const [labelInput, setLabelInput] = useState(label);
+  const [selectedForm, setSelectedForm] = useState(form);
+
+  const handleLabelChange = (newLabel) => {
+    onChange(index, newLabel, selectedForm);
+    setLabelInput(newLabel);
+  };
+
+  const handleFormPickerChange = (newForm) => {
+    onChange(index, labelInput, newForm);
+    setSelectedForm(selectedForm);
+  }
 
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.label}
-        onChangeText={setLabel}
-        value={label}
+        onChangeText={handleLabelChange}
+        value={labelInput}
         placeholder='Label'
         placeholderTextColor='#696969'
       />
-      <FormPicker/>
+      <FormPicker 
+        form={selectedForm} 
+        onChange={handleFormPickerChange}
+      />
     </View>
   );
 }
