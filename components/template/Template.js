@@ -8,7 +8,11 @@ const baseLabel = '';
 const baseForm = 'text';
 
 function Template() {
-  const [templateList, setTemplateList] = useState([{ index: 0, label: baseLabel, form: baseForm }]);
+  const [templateList, setTemplateList] = useState([{ 
+    index: 0, 
+    label: baseLabel, 
+    form: baseForm 
+  }]);
 
   const flatList = useRef(null);
 

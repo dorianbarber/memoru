@@ -1,6 +1,5 @@
 import React from 'react';
 import { Picker, StyleSheet } from 'react-native';
-//import { Picker } from '@react-native-picker/picker';
 
 function FormPicker({ form, onChange }) {
   return (
