@@ -6,13 +6,16 @@ import EntypoIcon from 'react-native-vector-icons/Entypo';
 
 const baseLabel = '';
 const baseForm = 'text';
-
-function Template() {
-  const [templateList, setTemplateList] = useState([{ 
+const baseItem = () => (
+  { 
     index: 0, 
     label: baseLabel, 
     form: baseForm 
-  }]);
+  }
+);
+
+function Template() {
+  const [templateList, setTemplateList] = useState([baseItem()]);
 
   const flatList = useRef(null);
 
@@ -20,7 +23,21 @@ function Template() {
     var newTemplateList = JSON.parse(JSON.stringify(templateList));
     newTemplateList[index] = { index: index, label: label, form: form };
     setTemplateList(newTemplateList);
-  }
+  };
+
+  const deleteItemByIndex = (index) => {
+    if (index === 0 && templateList.length === 1) {
+      setTemplateList([baseItem()]);
+      return;
+    }
+    var newTemplateList = JSON.parse(JSON.stringify(templateList));
+    newTemplateList.splice(index, 1);
+    newTemplateList.map((item, index) => {
+      item.index = index; 
+      return item;
+    });
+    setTemplateList(newTemplateList);
+  };
  
   const renderItem = ({item, x, y}) => (
     <LabelFormPair 
@@ -28,6 +45,7 @@ function Template() {
       label={item.label} 
       form={item.form} 
       onChange={updateField}
+      onDelete={() => deleteItemByIndex(item.index)}
     />
   );
 

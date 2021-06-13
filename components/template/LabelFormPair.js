@@ -1,9 +1,11 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, TouchableNativeFeedback, View } from 'react-native';
 import FormPicker from './FormPicker.js';
 import LabelInput from './LabelInput.js';
 
-function LabelFormPair({ index, label, form, onChange }) {
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
+function LabelFormPair({ index, label, form, onChange, onDelete }) {
 
   const handleLabelChange = (newLabel) => {
     onChange(index, newLabel, form);
@@ -14,15 +16,24 @@ function LabelFormPair({ index, label, form, onChange }) {
   }
 
   return (
-    <View style={styles.container}>
-      <LabelInput
-        label={label}
-        onChange={handleLabelChange}
-      />
-      <FormPicker 
-        form={form} 
-        onChange={handleFormPickerChange}
-      />
+    <View style={{display: 'flex', flexDirection: 'row'}}>
+      <View style={styles.container}>
+        <LabelInput
+          label={label}
+          onChange={handleLabelChange}
+        />
+        <FormPicker 
+          form={form} 
+          onChange={handleFormPickerChange}
+        />
+      </View>
+      <TouchableNativeFeedback
+        onPress={onDelete}
+      >
+        <View style={styles.touchable}>
+          <MaterialIcons name='delete' size={30} color='#a3a2a2' />
+        </View>
+      </TouchableNativeFeedback>
     </View>
   );
 }
@@ -37,6 +48,10 @@ const styles = StyleSheet.create({
     borderColor: '#696969',
     width: 325,
     margin: 10,
+  },
+  touchable: {
+    alignContent: 'center',
+    justifyContent: 'center',
   },
 });
 
