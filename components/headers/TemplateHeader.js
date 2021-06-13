@@ -3,7 +3,7 @@ import { View, StyleSheet, TextInput } from 'react-native';
 import { Header } from 'react-native-elements';
 
 import MenuIcon from './headerComponents/MenuIcon.js';
-import HeaderButtons from './headerComponents/HeaderButtons.js';
+import TemplateHeaderButtons from './headerComponents/TemplateHeaderButtons.js';
 
 
 function HomeHeader() {
@@ -13,7 +13,7 @@ function HomeHeader() {
     <View style={styles.container}>
       <Header
         leftComponent={MenuIcon}
-        rightComponent={HeaderButtons}
+        rightComponent={<TemplateHeaderButtons onSubmit={console.log('submit button')}/>}
         containerStyle={styles.header}
       />
       <TextInput
