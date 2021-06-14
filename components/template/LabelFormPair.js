@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     borderColor: '#696969',
-    width: 325,
+    width: '83%',
     margin: 10,
   },
   touchable: {
