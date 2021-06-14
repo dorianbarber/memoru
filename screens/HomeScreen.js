@@ -3,6 +3,7 @@ import { View, StyleSheet } from 'react-native';
 
 import { StatusBar } from 'expo-status-bar';
 import HomeHeader from '../components/headers/HomeHeader.js';
+import HomeActionButton from '../components/buttons/HomeActionButton.js';
 
 function HomeScreen() {
   return (
@@ -11,6 +12,7 @@ function HomeScreen() {
       <StatusBar
         style='light' 
         backgroundColor='#000'/>
+      <HomeActionButton />
     </View>
   );
 }

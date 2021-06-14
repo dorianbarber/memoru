@@ -4,13 +4,15 @@ import TemplateScreen from './screens/TemplateScreen.js';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+console.disableYellowBox = true;
+
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator 
-        initialRouteName='TemplateBuilder'
+        initialRouteName='Home'
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name='Home' component={HomeScreen}/>
