@@ -15,7 +15,6 @@ function LabelInput({ label, onChange }) {
 
 const styles = StyleSheet.create({
   label: {
-    // width: 150,
     flex: 1,
     fontSize: 15,
     paddingLeft: 10,

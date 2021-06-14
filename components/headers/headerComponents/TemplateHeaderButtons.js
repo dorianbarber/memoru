@@ -10,7 +10,7 @@ function TemplateHeaderButtons({onSubmit}) {
       <ShareButton message='template is dope'/>
       <SubmitButton onSubmit={onSubmit}/>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({

@@ -4,8 +4,8 @@ import TemplateScreen from './screens/TemplateScreen.js';
 
 export default function App() {
   return (
-    //<HomeScreen/>
-    <TemplateScreen/>
+    <HomeScreen/>
+    //<TemplateScreen/>
   );
 }
 

@@ -7,7 +7,7 @@ import TemplateHeaderButtons from './headerComponents/TemplateHeaderButtons.js';
 
 
 function HomeHeader() {
-  const [title, onChangeTitle] = useState('')
+  const [title, onChangeTitle] = useState('');
 
   return (
     <View style={styles.container}>
@@ -24,7 +24,6 @@ function HomeHeader() {
         placeholderTextColor='#696969'
       />
     </View>
-    
   );  
 }
 

@@ -13,7 +13,7 @@ function LabelFormPair({ index, label, form, onChange, onDelete }) {
 
   const handleFormPickerChange = (newForm) => {
     onChange(index, label, newForm);
-  }
+  };
 
   return (
     <View style={{display: 'flex', flexDirection: 'row'}}>
