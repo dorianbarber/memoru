@@ -2,13 +2,13 @@ import React, {useState, useEffect} from 'react';
 import { StyleSheet } from 'react-native';
 import { Header } from 'react-native-elements';
 
-import MenuIcon from '../headerComponents/MenuIcon.js';
-
-import HeaderText from '../headerComponents/HeaderText.js';
-import HeaderButtons from '../headerComponents/HeaderButtons.js';
+import MenuIcon from './headerComponents/MenuIcon.js';
+import HeaderText from './headerComponents/HeaderText.js';
+import HeaderButtons from './headerComponents/HeaderButtons.js';
 
 
 function HomeHeader() {
+  // alternatively do not use state and pass 'Memoru' to HeaderText
   const [title, setTitle] = useState('')
 
   useEffect(() => {
