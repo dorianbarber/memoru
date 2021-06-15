@@ -7,22 +7,22 @@ import NotesHeaderButtons from './headerComponents/NotesHeaderButtons';
 
 
 function NotesHeader() {
-    return (
-        <View>
-            <Header
-            leftComponent={MenuIcon}
-            rightComponent={<NotesHeaderButtons />}
-            containerStyle={styles.header}
-            />
-            <TextInput
-            style={styles.input}
-            onChangeText={onChangeTitle}
-            value={title}
-            placeholder='Title'
-            placeholderTextColor='#696969'
-            />
-        </View>
-    )
+  return (
+    <View>
+      <Header
+        leftComponent={MenuIcon}
+        rightComponent={<NotesHeaderButtons />}
+        containerStyle={styles.header}
+      />
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeTitle}
+        value={title}
+        placeholder='Title'
+        placeholderTextColor='#696969'
+      />
+    </View>
+  )
 }
 
 

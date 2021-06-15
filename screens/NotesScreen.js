@@ -3,25 +3,20 @@ import { View, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 import NotesHeader from '../components/headers/NotesHeader';
-import Notes from '../components/notes/notes';
-
-import React from 'react'
-
-
-
-////////////  When you click on notes and type anything, the notes automatically saves as a file. Though if it's empty, then it does not save  //////////////////////
+import TemplateHeader from '../components/headers/TemplateHeader.js';
+import Notes from '../components/notes/Notes.js';
 
 function NotesScreen() {
-    return (
-        <View style={styles.container}>
-            <NotesHeader />
-            <Notes />
-            <StatusBar
-                style='light' 
-                backgroundColor='#000'
-            />
-        </View>
-    )
+  return (
+    <View style={styles.container}>
+      <TemplateHeader />
+      <Notes />
+      <StatusBar
+        style='light' 
+        backgroundColor='#000'
+      />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
