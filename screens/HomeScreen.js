@@ -3,14 +3,16 @@ import { View, StyleSheet } from 'react-native';
 
 import { StatusBar } from 'expo-status-bar';
 import HomeHeader from '../components/headers/HomeHeader.js';
+import HomeActionButton from '../components/buttons/HomeActionButton.js';
 
-function HomeScreen() {
+function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <HomeHeader/>
       <StatusBar
         style='light' 
         backgroundColor='#000'/>
+      <HomeActionButton navigation={navigation}/>
     </View>
   );
 }
