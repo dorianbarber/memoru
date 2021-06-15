@@ -13,12 +13,15 @@ function HeaderText({title}) {
 
 const styles = StyleSheet.create({
   leftHeader: {
-    right: 50,
-    width: 150,
+    // right: 50,
+    // width: 150,
+    // alignSelf: 'flex-start',
+    marginTop: -5,
   },
   title: {
     color: '#fff',
-    fontSize: 35,
+    fontSize: 30,
+    position: 'relative',
   },
 });
 

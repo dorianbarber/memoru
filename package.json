@@ -22,6 +22,7 @@
     "react-native-elements": "^3.4.1",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-screens": "^3.3.0",
+    "react-native-picker": "^4.3.7",
     "react-native-vector-icons": "^8.1.0",
     "react-native-web": "~0.13.12"
   },

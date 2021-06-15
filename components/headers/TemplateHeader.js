@@ -36,17 +36,15 @@ const styles = StyleSheet.create({
     position: 'relative',
     backgroundColor: '#000',
     height: 90,
-    borderWidth: 0,
   },
   input: {
     position: 'relative',
-    height: 50,
     color: 'white',
     backgroundColor: 'black',
-    paddingLeft: 50,
-    paddingTop: 8,
-    paddingBottom: 5,
-    fontSize: 35,
+    paddingLeft: 30,
+    paddingTop: 10,
+    paddingBottom: 10,
+    fontSize: 30,
   },
 });
 

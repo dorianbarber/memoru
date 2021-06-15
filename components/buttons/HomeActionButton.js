@@ -16,7 +16,7 @@ function HomeActionButton({ navigation }) {
       <ActionButton.Item 
         buttonColor='#141414' 
         title='Classic Notes'
-        onPress={() => {}}
+        onPress={() => navigation.navigate('ClassicNotes')}
       >
         <MaterialCommunityIcons name='pencil' size={20} color ='white'/>
       </ActionButton.Item>
