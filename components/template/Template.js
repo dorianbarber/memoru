@@ -94,6 +94,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
+    paddingTop: 20,
   },
   addButton: { 
     display: 'flex',

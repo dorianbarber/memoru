@@ -20,9 +20,9 @@ const styles = StyleSheet.create({
   rightSideItems:{
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     color: '#fff',
-    top: 15,
+    // top: 15,
     width: 100,
   },
 });

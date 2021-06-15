@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     color: '#fff',
-    top: 15,
     width: 100,
   },
 });

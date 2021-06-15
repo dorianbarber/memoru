@@ -34,8 +34,8 @@ function OptionsButton() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
+    // flex: 1,
+    // alignItems: 'center',
   },
   touchable: {
     alignContent: 'center',
