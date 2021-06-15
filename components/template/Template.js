@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect} from 'react';
 import { View, FlatList, StyleSheet, TouchableNativeFeedback } from 'react-native';
 import LabelFormPair from './LabelFormPair.js';
 
@@ -14,10 +14,14 @@ const baseItem = () => (
   }
 );
 
-function Template() {
-  const [templateList, setTemplateList] = useState([baseItem()]);
+function Template({templateList, setTemplateList}) {
 
   const flatList = useRef(null);
+
+  useEffect(() => {
+    setTemplateList([baseItem()])
+  }, [])
+
 
   const updateField = (index, label, form) => {
     var newTemplateList = JSON.parse(JSON.stringify(templateList));

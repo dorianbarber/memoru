@@ -4,11 +4,11 @@ import { StyleSheet, View } from 'react-native';
 import ShareButton from '../../buttons/ShareButton.js';
 import SubmitButton from '../../buttons/SubmitButton.js';
 
-function TemplateHeaderButtons({onSubmit}) {
+function TemplateHeaderButtons({templateList, title}) {
   return (
     <View style={styles.rightSideItems}>
       <ShareButton message='template is dope'/>
-      <SubmitButton onSubmit={onSubmit}/>
+      <SubmitButton templateList={templateList} title={title}/>
     </View>
   );
 }
