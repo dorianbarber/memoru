@@ -16,7 +16,7 @@ function Notes({ text, onChangeText }) {
 
 const styles = StyleSheet.create({
   input: {
-    padding: 20,
+    padding: 30,
     fontSize: 20,
   }
 });

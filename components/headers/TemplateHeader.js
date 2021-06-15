@@ -31,6 +31,7 @@ function HomeHeader() {
 const styles = StyleSheet.create({
   container: {
     height: 140,
+    paddingBottom: 5,
   },
   header: {
     position: 'relative',
@@ -40,13 +41,13 @@ const styles = StyleSheet.create({
   },
   input: {
     position: 'relative',
-    height: 50,
+    // height: 50,
     color: 'white',
     backgroundColor: 'black',
-    paddingLeft: 50,
-    paddingTop: 8,
-    paddingBottom: 5,
-    fontSize: 35,
+    paddingLeft: 30,
+    paddingTop: 10,
+    paddingBottom: 10,
+    fontSize: 30,
   },
 });
 
