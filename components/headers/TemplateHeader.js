@@ -31,17 +31,14 @@ function HomeHeader() {
 const styles = StyleSheet.create({
   container: {
     height: 140,
-    paddingBottom: 5,
   },
   header: {
     position: 'relative',
     backgroundColor: '#000',
     height: 90,
-    borderWidth: 0,
   },
   input: {
     position: 'relative',
-    // height: 50,
     color: 'white',
     backgroundColor: 'black',
     paddingLeft: 30,
