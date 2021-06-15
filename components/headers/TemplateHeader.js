@@ -6,14 +6,17 @@ import MenuIcon from './headerComponents/MenuIcon.js';
 import TemplateHeaderButtons from './headerComponents/TemplateHeaderButtons.js';
 
 
-function HomeHeader() {
+function TemplateHeader({templateList}) {
   const [title, onChangeTitle] = useState('');
 
   return (
     <View style={styles.container}>
       <Header
         leftComponent={MenuIcon}
-        rightComponent={<TemplateHeaderButtons onSubmit={console.log('submit button')}/>}
+        rightComponent={<TemplateHeaderButtons 
+                          templateList={templateList} 
+                          title={title}
+                      />}
         containerStyle={styles.header}
       />
       <TextInput
@@ -48,4 +51,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeHeader;
+export default TemplateHeader;

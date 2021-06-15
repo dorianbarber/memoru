@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { View, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
@@ -7,10 +7,12 @@ import Template from '../components/template/Template.js';
 
 
 function TemplateScreen() {
+  const [templateList, setTemplateList] = useState(null);
+
   return (
     <View style={styles.container}>
-      <TemplateHeader/>
-      <Template/>
+      <TemplateHeader templateList={templateList}/>
+      <Template templateList={templateList} setTemplateList={setTemplateList}/>
       <StatusBar
         style='light' 
         backgroundColor='#000'
