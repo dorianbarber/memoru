@@ -2,14 +2,14 @@ import React, {useState, useEffect} from 'react';
 import { StyleSheet } from 'react-native';
 import { Header } from 'react-native-elements';
 
-import MenuIcon from './headerComponents/MenuIcon';
-
+import MenuIcon from './headerComponents/MenuIcon.js';
 import HeaderText from './headerComponents/HeaderText.js';
 import HeaderButtons from './headerComponents/HeaderButtons.js';
 
 
 function HomeHeader() {
-  const [title, setTitle] = useState('')
+  // alternatively do not use state and pass 'Memoru' to HeaderText
+  const [title, setTitle] = useState('');
 
   useEffect(() => {
     setTitle('Memoru')
@@ -20,6 +20,7 @@ function HomeHeader() {
 
   return (
     <Header
+      placement='left'
       leftComponent={MenuIcon}
       centerComponent={<HeaderText title={title} setTitle={setTitle}/>}
       rightComponent={HeaderButtons}
@@ -32,9 +33,11 @@ function HomeHeader() {
 const styles = StyleSheet.create({
   //Entire header
   header: {
-    position: 'absolute',
+    position: 'relative', //was absolute
+    display: 'flex',
     backgroundColor: '#000',
-    height: 140,
+    alignItems: 'baseline',
+    // height: 140,
   },
 });
 

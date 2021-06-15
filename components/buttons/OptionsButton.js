@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { View, TouchableNativeFeedback, StyleSheet } from 'react-native';
+import { View, TouchableNativeFeedback, StyleSheet, Text } from 'react-native';
 
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import OptionsList from './optionBtnOptions/OptionsList'
@@ -8,32 +8,34 @@ function OptionsButton() {
     const [optionsActive, setOptionsActive] = useState(false)
 
     const onOptions = () => {
-        if(!optionsActive){
+      if (!optionsActive) {
         setOptionsActive(true)
-        }else{
-         setOptionsActive(false)
-        }
+      } else {
+        setOptionsActive(false)
+      }
     }
 
 
     return (
-        <>
-            <TouchableNativeFeedback 
-            onPress={onOptions}
-            background={TouchableNativeFeedback.Ripple('#696969', true)}
-                >
-                <View style={styles.touchable}>
-                    <EntypoIcon name='dots-three-vertical' size={20} color='white' />
-                </View>
-            </TouchableNativeFeedback>
-
-            {optionsActive && <OptionsList setOptionsActive={setOptionsActive} />}
-            
-        </>
-    )
+      <View style={styles.container}>
+        <TouchableNativeFeedback 
+          onPress={onOptions}
+          background={TouchableNativeFeedback.Ripple('#696969', true)}
+        >
+          <View style={styles.touchable}>
+              <EntypoIcon name='dots-three-vertical' size={20} color='white' />
+          </View>
+        </TouchableNativeFeedback>
+        {optionsActive && <OptionsList />}
+      </View>  
+    );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    // flex: 1,
+    // alignItems: 'center',
+  },
   touchable: {
     alignContent: 'center',
     justifyContent: 'center',
