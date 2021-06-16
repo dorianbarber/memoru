@@ -23,7 +23,7 @@ function HomeHeader() {
       placement='left'
       leftComponent={MenuIcon}
       centerComponent={<HeaderText title={title} setTitle={setTitle}/>}
-      rightComponent={HeaderButtons}
+      rightComponent={<HeaderButtons />}
       containerStyle={styles.header}
     />
   );  

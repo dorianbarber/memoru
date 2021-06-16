@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
   touchable: {
     alignContent: 'center',
     justifyContent: 'center',
-
   },
 });
 

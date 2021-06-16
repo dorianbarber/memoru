@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, StyleSheet, TextInput } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
-import TemplateHeader from '../components/headers/TemplateHeader.js';
+import NotesHeader from '../components/headers/NotesHeader.js'
 import Notes from '../components/notes/Notes.js';
 
 function NotesScreen() {
@@ -10,7 +10,7 @@ function NotesScreen() {
 
   return (
     <View style={styles.container}>
-      <TemplateHeader />
+      <NotesHeader />
       <Notes text={text} onChangeText={setText}/>
       <StatusBar
         style='light' 

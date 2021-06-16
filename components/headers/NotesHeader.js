@@ -6,7 +6,11 @@ import MenuIcon from './headerComponents/MenuIcon.js';
 import NotesHeaderButtons from './headerComponents/NotesHeaderButtons';
 
 
+
 function NotesHeader() {
+  const [notesTitle, onNotesChangeTitle] = useState('');
+
+
   return (
     <View>
       <Header
@@ -16,8 +20,8 @@ function NotesHeader() {
       />
       <TextInput
         style={styles.input}
-        onChangeText={onChangeTitle}
-        value={title}
+        onChangeText={onNotesChangeTitle}
+        value={notesTitle}
         placeholder='Title'
         placeholderTextColor='#696969'
       />
@@ -37,7 +41,6 @@ const styles = StyleSheet.create({
     borderWidth: 0,
   },
   input: {
-    position: 'relative',
     height: 50,
     color: 'white',
     backgroundColor: 'black',

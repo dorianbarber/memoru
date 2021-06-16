@@ -1,21 +1,12 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { SafeAreaView, View, StyleSheet, Text } from 'react-native';
 import {TouchableNativeFeedback} from 'react-native-gesture-handler'
 
-function OptionsList({setOptionsActive}) {
-    const [selectedId, setSelectedId] = useState(null)
-
-    const onOptionPress = (id) => {
-        setOptionsActive(false)
-        console.log(id)
-        setSelectedId(id)
-    }
-
+function OptionsList({setOptionsActive, onOptionPress}) {
 
     return (
         <SafeAreaView style={styles.optionsListContainer}>
             
-        
             <TouchableNativeFeedback
             onPress={() => onOptionPress('attach-files-key')}
             background={TouchableNativeFeedback.Ripple('#696969', true)}
@@ -35,7 +26,7 @@ function OptionsList({setOptionsActive}) {
             </TouchableNativeFeedback>
 
             <TouchableNativeFeedback
-            onPress={() => onOptionPress('delete-key')}
+            onPress={() => onOptionPress('delete-notes-key')}
             background={TouchableNativeFeedback.Ripple('#696969', true)}
             > 
                 <View style={styles.item}>
@@ -77,18 +68,19 @@ const styles = StyleSheet.create({
         borderWidth: 3,
         borderColor: '#323232',
         flex: 1,
-
-        // elevation: 20,
+        zIndex: 100
     },
     item:{
         padding: 15,
         backgroundColor: '#323232',
         borderBottomColor: 'black',
         borderBottomWidth: 2,
+                zIndex: 100
     },
     optionName: {
         color: 'white',
         fontSize: 13,
+                zIndex: 100
     }
 
 });
