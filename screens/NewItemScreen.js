@@ -4,8 +4,8 @@ import { StatusBar } from 'expo-status-bar';
 
 import NewItemHeader from '../components/headers/NewItemHeader.js';
 
-function NewItemScreen({ title='Anime', template}) {
-  // const [templateList, setTemplateList] = useState(null);
+function NewItemScreen({ title='Anime', template=[{form: 'text', index: 0, label: 'Title'}] }) {
+  const [items, setItems] = useState(template);
 
   return (
     <View style={styles.container}>

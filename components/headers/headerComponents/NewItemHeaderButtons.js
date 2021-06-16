@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     color: '#fff',
     width: 100,
+    paddingTop: 10,
   },
 });
 
