@@ -8,6 +8,7 @@ function DateInput({ onChange }) {
 
   const handleDateSelect = (newDate) => {
     onChange(newDate);
+    setShowPicker(false);
     setDate(newDate);
   };
 
