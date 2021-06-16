@@ -20,6 +20,13 @@ function HomeActionButton({ navigation }) {
       >
         <MaterialCommunityIcons name='pencil' size={20} color ='white'/>
       </ActionButton.Item>
+      <ActionButton.Item 
+        buttonColor='#141414' 
+        title='New Item Page TESTING'
+        onPress={() => navigation.navigate('NewItem')}
+      >
+        <MaterialCommunityIcons name='plus' size={20} color ='white'/>
+      </ActionButton.Item>
     </ActionButton>
   );
 }
