@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, TouchableNativeFeedback } from 'react-native';
 
-import EntypoIcon from 'react-native-vector-icons/Entypo';
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 
 import {db} from '../../firebase'
@@ -31,7 +30,7 @@ function SubmitButton({templateList, title}) {
       background={TouchableNativeFeedback.Ripple('#696969', true, 35)}
     >
       <View style={styles.touchable}>
-        <AntDesignIcon name='checkcircleo' size={30} color='white'/>
+        <AntDesignIcon name='check' size={25} color='white'/>
       </View>
     </TouchableNativeFeedback>
   );

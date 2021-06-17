@@ -24,7 +24,7 @@ function OptionsButton() {
           background={TouchableNativeFeedback.Ripple('#696969', true)}
         >
           <View style={styles.touchable}>
-              <EntypoIcon name='dots-three-vertical' size={20} color='white' />
+              <EntypoIcon name='dots-three-vertical' size={25} color='white' />
           </View>
         </TouchableNativeFeedback>
         {optionsActive && <OptionsList />}
@@ -34,14 +34,13 @@ function OptionsButton() {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // alignItems: 'center',
+    alignContent: 'center',
+    justifyContent: 'center',
   },
   touchable: {
     alignContent: 'center',
     justifyContent: 'center',
   },
 });
-
 
 export default OptionsButton

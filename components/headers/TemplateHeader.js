@@ -12,7 +12,7 @@ function TemplateHeader({templateList}) {
   return (
     <View style={styles.container}>
       <Header
-        leftComponent={MenuIcon}
+        leftComponent={<MenuIcon />}
         rightComponent={<TemplateHeaderButtons 
                           templateList={templateList} 
                           title={title}
@@ -36,9 +36,7 @@ const styles = StyleSheet.create({
     height: 140,
   },
   header: {
-    position: 'relative',
     backgroundColor: '#000',
-    height: 90,
   },
   input: {
     position: 'relative',

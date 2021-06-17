@@ -8,7 +8,6 @@ import ShareButton from '../../buttons/ShareButton.js';
 function HeaderButtons() {
   return (
     <View style={styles.rightSideItems}>
-
       <ShareButton message='memoru is dope'/>
       <OptionsButton />
     </View>
@@ -21,8 +20,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
-    color: '#fff',
-    // top: 15,
     width: 100,
   },
 });

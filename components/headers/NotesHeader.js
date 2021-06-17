@@ -10,7 +10,7 @@ function NotesHeader() {
   return (
     <View>
       <Header
-        leftComponent={MenuIcon}
+        leftComponent={<MenuIcon/>}
         rightComponent={<NotesHeaderButtons />}
         containerStyle={styles.header}
       />
@@ -31,10 +31,7 @@ const styles = StyleSheet.create({
     height: 140,
   },
   header: {
-    position: 'relative',
     backgroundColor: '#000',
-    height: 90,
-    borderWidth: 0,
   },
   input: {
     position: 'relative',
