@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 
 function HeaderText({title}) {
   return (
@@ -10,16 +10,9 @@ function HeaderText({title}) {
 }
 
 const styles = StyleSheet.create({
-  leftHeader: {
-    // right: 50,
-    // width: 150,
-    // alignSelf: 'flex-start',
-    // marginTop: -5,
-  },
   title: {
     color: '#fff',
     fontSize: 25,
-    // position: 'relative',
   },
 });
 
