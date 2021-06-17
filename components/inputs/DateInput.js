@@ -6,12 +6,11 @@ function DateInput({ onChange }) {
   const [date, setDate] = useState(new Date());
   const [showPicker, setShowPicker] = useState(false);
 
-  const handleDateSelect = (event, newDate) => {
-    // onChange(newDate);
+  const handleDateSelect = (_, newDate) => {
+    onChange(newDate);
     const currentDate = newDate || date;
-    setDate(currentDate);
     setShowPicker(false);
-    // setDate(newDate);
+    setDate(currentDate);
   };
 
   console.log(date);
