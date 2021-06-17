@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: '#000',
-    // height: 90,
   },
   input: {
     position: 'relative',

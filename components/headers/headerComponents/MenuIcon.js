@@ -15,8 +15,6 @@ const styles = StyleSheet.create({
   menu:{
     margin: 0,
     padding: 0,
-    // alignSelf: 'auto',
-    // top: 10,
   },
 })
 

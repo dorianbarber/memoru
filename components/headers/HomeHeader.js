@@ -34,10 +34,8 @@ function HomeHeader() {
 
 
 const styles = StyleSheet.create({
-  //Entire header
   header: {
     backgroundColor: '#000',
-    // height: 90,
     justifyContent: 'space-between',
     alignItems: 'center',
   },
