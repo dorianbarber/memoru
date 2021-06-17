@@ -3,11 +3,9 @@ import { StyleSheet, View, Text } from 'react-native';
 
 function HeaderText({title}) {
   return (
-    <View style={styles.leftHeader}>
-      <Text style={styles.title}>
-        {title}
-      </Text>
-    </View>
+    <Text style={styles.title}>
+      {title}
+    </Text>
   );
 }
 
@@ -16,12 +14,12 @@ const styles = StyleSheet.create({
     // right: 50,
     // width: 150,
     // alignSelf: 'flex-start',
-    marginTop: -5,
+    // marginTop: -5,
   },
   title: {
     color: '#fff',
-    fontSize: 30,
-    position: 'relative',
+    fontSize: 25,
+    // position: 'relative',
   },
 });
 
