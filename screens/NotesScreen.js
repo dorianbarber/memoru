@@ -10,8 +10,10 @@ function NotesScreen() {
 
   return (
     <View style={styles.container}>
-      <NotesHeader />
-      <Notes text={text} onChangeText={setText}/>
+      <View style={styles.notesPageContainer}>
+        <NotesHeader />
+        <Notes text={text} onChangeText={setText}/>
+      </View>
       <StatusBar
         style='light' 
         backgroundColor='#000'
@@ -26,6 +28,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     // paddingTop: 30,
   },
+  notesPageContainer: {
+    position: 'absolute',
+    elevation: 3,
+    zIndex: 3,
+  }
 });
 
 export default NotesScreen

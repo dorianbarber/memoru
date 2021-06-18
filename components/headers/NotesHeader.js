@@ -39,8 +39,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
     height: 90,
     borderWidth: 0,
+    elevation: 10,
   },
   input: {
+    elevation: 3,
     height: 50,
     color: 'white',
     backgroundColor: 'black',

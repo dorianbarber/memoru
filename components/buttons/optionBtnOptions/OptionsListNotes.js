@@ -59,28 +59,27 @@ function OptionsList({setOptionsActive, onOptionPress}) {
 const styles = StyleSheet.create({
     optionsListContainer:{
         position: 'absolute',
+        elevation: 100,
+        zIndex: 100,
+
         width: 150,
         height: 'auto',
-
         color: '#000',
         right: 0,
         borderRadius:10,
         borderWidth: 3,
         borderColor: '#323232',
         flex: 1,
-        zIndex: 100
     },
     item:{
         padding: 15,
         backgroundColor: '#323232',
         borderBottomColor: 'black',
         borderBottomWidth: 2,
-                zIndex: 100
     },
     optionName: {
         color: 'white',
         fontSize: 13,
-                zIndex: 100
     }
 
 });
