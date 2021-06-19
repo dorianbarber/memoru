@@ -7,6 +7,7 @@ function NewItemForm({ data, onChange }) {
   const updateField = (index, newData) => {
     var newFields = JSON.parse(JSON.stringify(data));
     newFields[index].data = newData;
+    console.log(newFields);
     onChange(newFields);
   };
 
@@ -16,7 +17,7 @@ function NewItemForm({ data, onChange }) {
       <View style={{ width: '40%'}}>
         <Text style={styles.label}>{item.label}</Text>
       </View>
-      <FieldInput form={item.form} data={item.data} onChange={updateField}/>
+      <FieldInput index={item.index} form={item.form} data={item.data} onChange={updateField}/>
     </View>
   };
 

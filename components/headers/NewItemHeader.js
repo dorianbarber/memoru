@@ -5,13 +5,13 @@ import { Header } from 'react-native-elements';
 import NewItemHeaderButtons from './headerComponents/NewItemHeaderButtons.js';
 
 
-function NewItemHeader({ title }) {
+function NewItemHeader({ title, data }) {
 
   return (
     <View style={styles.container}>
       <Header
         centerComponent={<Text style={styles.title}>{title}</Text>}
-        rightComponent={NewItemHeaderButtons}
+        rightComponent={<NewItemHeaderButtons title={title} fields={data}/>}
         containerStyle={styles.header}
       />
     </View>

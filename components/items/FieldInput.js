@@ -2,10 +2,15 @@ import React, { useState } from 'react';
 import { View, StyleSheet, TextInput } from 'react-native';
 import DateInput from '../inputs/DateInput.js';
 
-function FieldInput({ form, data, onChange }) {
+function FieldInput({ index, form, data, onChange }) {
   const [value, setValue] = useState(data);
   const [num, setNum] = useState(0);
   const [denom, setDenom] = useState(0);
+
+  const onDataChange = (newData) => {
+    onChange(index, newData);
+    setValue(newData);
+  }
 
   const returnFormInput = (form) => {
     switch(form) {
@@ -13,14 +18,14 @@ function FieldInput({ form, data, onChange }) {
         return <TextInput
           style={styles.text} 
           value={value}
-          onChange={setValue}
+          onChange={onDataChange}
           multiline={true}
           placeholder='Content'
         />;
       case 'number':
         return <TextInput
           value={value}
-          onChange={setValue}
+          onChange={onDataChange}
           keyboardType='number-pad'
         />;
       case 'fraction':
