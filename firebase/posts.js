@@ -38,5 +38,4 @@ function postNewItem( user, databaseName, itemName, fields) {
   }
 }
 
-export default postNewTemplate;
-export default postNewItem;
+export {postNewTemplate, postNewItem};

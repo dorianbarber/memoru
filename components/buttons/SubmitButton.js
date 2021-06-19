@@ -2,13 +2,12 @@ import React from 'react';
 import { View, StyleSheet, TouchableNativeFeedback } from 'react-native';
 
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
-import postNewTemplate from '../../firebase/posts';
 
-function SubmitButton({templateList, title}) {
+function SubmitButton({ onSubmit }) {
 
   return(
     <TouchableNativeFeedback
-      onPress={() => postNewTemplate('userTest', templateList, title)}
+      onPress={onSubmit}
       background={TouchableNativeFeedback.Ripple('#696969', true, 35)}
     >
       <View style={styles.touchable}>
