@@ -1,13 +1,33 @@
-import React from 'react';
-import { Picker, StyleSheet, View } from 'react-native';
+import React, { useState } from 'react';
+import { Picker, StyleSheet, View, Modal, Text } from 'react-native';
 
 function FormPicker({ form, onChange }) {
+  const [modalVisible, setModalVisible] = useState(false);
+  const [metadata, setMetadata] = useState();
+
+  const handleOnValueChange = (itemValue, _) => {
+    if (itemValue === 'fraction') {
+      setModalVisible(true);
+    }
+    onChange(itemValue);
+  }
+
   return (
     <View style={styles.container}>
+      <Modal
+        animationType='slide'
+        visible={modalVisible}
+      >
+        <View style={styles.modalView}>
+          <Text>
+            {'hello world'}
+          </Text>
+        </View>
+      </Modal>
       <Picker
         style={styles.picker}
         selectedValue={form}
-        onValueChange={(itemValue, _) => onChange(itemValue)}
+        onValueChange={handleOnValueChange}
         mode='dropdown'
       >
         <Picker.Item label='Text' value='text'/>
@@ -30,6 +50,11 @@ const styles = StyleSheet.create({
   colour: {
     color: '#fff',
     backgroundColor: '#000',
+  },
+  modalView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
