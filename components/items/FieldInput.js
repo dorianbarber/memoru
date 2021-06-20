@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, TextInput } from 'react-native';
 import DateInput from '../inputs/DateInput.js';
+import FractionInput from '../inputs/FractionInput.js';
 
 function FieldInput({ index, form, data, onChange }) {
   const [value, setValue] = useState(data);
-  const [num, setNum] = useState(0);
-  const [denom, setDenom] = useState(0);
 
   const onDataChange = (newData) => {
     onChange(index, newData);
+    console.log(newData);
     setValue(newData);
   }
 
@@ -29,22 +29,7 @@ function FieldInput({ index, form, data, onChange }) {
           keyboardType='number-pad'
         />;
       case 'fraction':
-        return <View styles={styles.fraction}>
-          <TextInput
-            style={styles.text} 
-            value={num}
-            onChange={setNum}
-            placeholder='Numerator'
-            keyboardType='number-pad'
-          />
-          <TextInput
-            style={styles.text} 
-            value={denom}
-            onChange={setDenom}
-            placeholder='Denominator'
-            keyboardType='number-pad'
-          />
-        </View>;
+        return <FractionInput onChange={onDataChange} startFrac={value}/>;
       case 'date':
         return <DateInput onChange={onDataChange}/>;
     }

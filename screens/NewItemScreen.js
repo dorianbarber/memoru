@@ -5,7 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import NewItemHeader from '../components/headers/NewItemHeader.js';
 import NewItemForm from '../components/items/NewItemForm.js';
 
-function NewItemScreen({ title='Anime', template=[{form: 'text', index: 0, label: 'Title'}, {form: 'date', index: 1, label: 'Date watched'}, {form: 'number', index: 2, label: 'Rating'}] }) {
+function NewItemScreen({ title='Anime', template=[{form: 'text', index: 0, label: 'Title'}, {form: 'date', index: 1, label: 'Date watched'}, {form: 'fraction', index: 2, label: 'Rating'}] }) {
   const [fields, setFields] = useState(JSON.parse(JSON.stringify(template))); // this probably needs to be fixed a copy or smth
 
   return (
