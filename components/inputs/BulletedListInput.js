@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextInput } from 'react-native';
+import { View, Text, FlatList, TextInput, StyleSheet, Button } from 'react-native';
 
 function findFirstDiff(a, b) {
   var i = 0;
@@ -8,42 +8,108 @@ function findFirstDiff(a, b) {
   return i;
 }
 
-function BulletedListInput({ placeholder }) {
-  const [text, setText] = useState('')
+// each line is a view pair 
+// each view pair has 1 Text and 1 Text input
+// the Text is a bullet unicode character
+// in the text input, on enter press a new entry is added
+function BulletedListInput() {
+  const [text, setText] = useState(['thing 1', 'thing 2']); 
 
-  const onChangeText = (newValue) => {
-    const newCharIndex = findFirstDiff(text, newValue);
-    if (newValue[newCharIndex] === '\n') {
-      const correctValue = newValue.slice(0, newCharIndex + 1) + '\u2022 ' + newValue.slice(newCharIndex + 1);
-      setText(correctValue);
-    } else {
-      setText(newValue);
-    }
-  };
-
-  const onEmptyFocus = () => {
-    if (text === '') {
-      setText('\u2022 ');
-    }
-  };
-
-  const handleEnterKey = (e) => {
+  const handleEnterKey = (e, index) => {
     if (e.nativeEvent.key === 'Enter') {
-      const newText = text.concat('\u2022 ');
+      var newText = [...text];
+      newText.splice(index+1, 0, '');
       setText(newText);
     }
-  }
+  };
+
+  const updateText = (newValue, index) => {
+    if (newValue.slice(-1) === '\n') {
+      return;
+    }
+    var newText = [...text];
+    newText[index] = newValue;
+    setText(newText);
+  };
+
+  const renderItem = ({item, index, _}) => {
+    return <View style={styles.container}>
+      <Text style={styles.bullet}>{'\u2022'}</Text>
+      <TextInput
+        multiline={true}
+        style={styles.textInput}
+        value={item}
+        onChangeText={(newTextValue) => updateText(newTextValue, index)}
+        onKeyPress={(nativeEvent) => handleEnterKey(nativeEvent, index)}
+      />
+    </View>
+  };
 
   return (
-    <TextInput
-      onFocus={onEmptyFocus}
-      onKeyPress={handleEnterKey}
-      onChangeText={onChangeText}
-      value={text}
-      multiline={true}
-      placeholder={placeholder}
-    />
+    <View style={{flex: 1, borderWidth: 1}}>
+      <FlatList 
+        data={text}
+        renderItem={renderItem}
+      />
+    </View>
+      
   );
 }
+
+
+const styles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    borderWidth: 1,
+    padding: 15,
+    alignItems: 'center',
+  },
+  bullet: {
+    paddingRight: 5,
+    fontSize: 20,
+  },
+  textInput: {
+    fontSize: 17,
+  }
+});
+
+// function BulletedListInput({ placeholder }) {
+//   const [text, setText] = useState('')
+
+//   const onChangeText = (newValue) => {
+//     const newCharIndex = findFirstDiff(text, newValue);
+//     if (newValue[newCharIndex] === '\n') {
+//       const correctValue = newValue.slice(0, newCharIndex + 1) + '\u2022 ' + newValue.slice(newCharIndex + 1);
+//       setText(correctValue);
+//     } else {
+//       setText(newValue);
+//     }
+//   };
+
+//   const onEmptyFocus = () => {
+//     if (text === '') {
+//       setText('\u2022 ');
+//     }
+//   };
+
+//   const handleEnterKey = (e) => {
+//     if (e.nativeEvent.key === 'Enter') {
+//       const newText = text.concat('\u2022 ');
+//       setText(newText);
+//     }
+//   }
+
+//   return (
+//     <TextInput
+//       onFocus={onEmptyFocus}
+//       onKeyPress={handleEnterKey}
+//       onChangeText={onChangeText}
+//       value={text}
+//       multiline={true}
+//       placeholder={placeholder}
+//     />
+//   );
+// }
 
 export default BulletedListInput;

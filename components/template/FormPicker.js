@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Picker, StyleSheet, View, Modal, Text } from 'react-native';
+import BulletedListInput from '../inputs/BulletedListInput.js';
 
 function FormPicker({ form, onChange }) {
   const [modalVisible, setModalVisible] = useState(false);
   const [metadata, setMetadata] = useState();
 
   const handleOnValueChange = (itemValue, _) => {
-    if (itemValue === 'fraction') {
+    if (itemValue === 'picker') {
       setModalVisible(true);
     }
     onChange(itemValue);
@@ -18,10 +19,11 @@ function FormPicker({ form, onChange }) {
         animationType='slide'
         visible={modalVisible}
       >
-        <View style={styles.modalView}>
-          <Text>
-            {'hello world'}
-          </Text>
+        <View style={styles.modalWrapView}>
+          <View style={styles.modalView}>
+            <Text style={{fontSize: 20}}>{'Enter values:'}</Text>
+            <BulletedListInput />
+          </View>
         </View>
       </Modal>
       <Picker
@@ -51,11 +53,19 @@ const styles = StyleSheet.create({
     color: '#fff',
     backgroundColor: '#000',
   },
-  modalView: {
+  modalWrapView: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    // elevation: 2
+  }
 });
 
 export default FormPicker;
