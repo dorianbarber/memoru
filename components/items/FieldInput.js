@@ -18,14 +18,14 @@ function FieldInput({ index, form, data, onChange }) {
         return <TextInput
           style={styles.text} 
           value={value}
-          onChange={onDataChange}
+          onChangeText={onDataChange}
           multiline={true}
           placeholder='Content'
         />;
       case 'number':
         return <TextInput
           value={value}
-          onChange={onDataChange}
+          onChangeText={onDataChange}
           keyboardType='number-pad'
         />;
       case 'fraction':
@@ -46,7 +46,7 @@ function FieldInput({ index, form, data, onChange }) {
           />
         </View>;
       case 'date':
-        return <DateInput onChange={setValue}/>;
+        return <DateInput onChange={onDataChange}/>;
     }
   };
 

@@ -7,12 +7,10 @@ function NewItemForm({ data, onChange }) {
   const updateField = (index, newData) => {
     var newFields = JSON.parse(JSON.stringify(data));
     newFields[index].data = newData;
-    console.log(newFields);
     onChange(newFields);
   };
 
   const renderField = ({ item, index, separators }) => {
-    console.log(item);
     return <View style={styles.pair}>
       <View style={{ width: '40%'}}>
         <Text style={styles.label}>{item.label}</Text>
