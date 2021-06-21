@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 35,
     alignItems: "center",
-    // elevation: 2
+    elevation: 2
   }
 });
 
