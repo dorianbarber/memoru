@@ -2,11 +2,11 @@ import React from 'react'
 import { StyleSheet, TextInput } from 'react-native';
 
 
-function Notes({ text, onChangeText }) {
+function Notes({ text, setText }) {
   return (
     <TextInput 
       style={styles.input}
-      onChangeText={onChangeText}
+      onChangeText={setText}
       value={text}
       multiline={true}
       placeholder={'Content'}

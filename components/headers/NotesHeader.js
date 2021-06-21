@@ -6,12 +6,14 @@ import MenuIcon from './headerComponents/MenuIcon.js';
 import NotesHeaderButtons from './headerComponents/NotesHeaderButtons';
 
 
-function NotesHeader() {
+function NotesHeader({text}) {
+  const[title, onChangeTitle] = useState('')
+
   return (
     <View>
       <Header
         leftComponent={<MenuIcon/>}
-        rightComponent={<NotesHeaderButtons />}
+        rightComponent={<NotesHeaderButtons title={title} text={text}/>}
         containerStyle={styles.header}
       />
       <TextInput

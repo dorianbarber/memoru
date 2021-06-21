@@ -9,7 +9,7 @@ function TemplateHeaderButtons({templateList, title}) {
   return (
     <View style={styles.rightSideItems}>
       <ShareButton message='template is dope'/>
-      <SubmitButton onSubmit={() => postNewTemplate('userTest', templateList, title)}/>
+      <SubmitButton onSubmit={() => postNewTemplate('userTest' /*User*/, templateList, title)}/>
     </View>
   );
 }

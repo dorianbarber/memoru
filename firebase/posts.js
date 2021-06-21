@@ -16,7 +16,7 @@ function postNewTemplate( user, templateList, title) {
       console.log(error);
     });
   } else {
-    console.log(errorLine);
+    console.log();
   }
 }
 
@@ -38,4 +38,24 @@ function postNewItem( user, databaseName, itemName, fields) {
   }
 }
 
-export {postNewTemplate, postNewItem};
+
+function postNewNotes(user, notesName, content){
+  const userNotesDB = db.collection('users').doc(user).collection('Notes')
+
+  if(userNotesDB) {
+    userNotesDB.doc(`${notesName}`).set({content})
+    .then(() => {
+      console.log('new notes added')
+      console.log(notesName, {content})
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  } else {
+    console.log(errorLine)
+  }
+}
+
+
+
+export {postNewTemplate, postNewItem, postNewNotes};
