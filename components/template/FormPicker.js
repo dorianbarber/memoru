@@ -18,10 +18,11 @@ function FormPicker({ form, onChange }) {
       <Modal
         animationType='slide'
         visible={modalVisible}
+        transparent={true}
       >
         <View style={styles.modalWrapView}>
           <View style={styles.modalView}>
-            <Text style={{fontSize: 20}}>{'Enter values:'}</Text>
+            <Text style={{fontSize: 20, paddingBottom: 5}}>{'Enter values:'}</Text>
             <BulletedListInput />
           </View>
         </View>
@@ -49,13 +50,8 @@ const styles = StyleSheet.create({
   picker: {
     flex: 1,
   },
-  colour: {
-    color: '#fff',
-    backgroundColor: '#000',
-  },
   modalWrapView: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
   },
   modalView: {
@@ -64,7 +60,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 35,
     alignItems: "center",
-    elevation: 2
+    elevation: 2,
+    height: 500, //this is bad but percentages dont work as intended
   }
 });
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { View, Text, FlatList, TextInput, StyleSheet } from 'react-native';
 
 // each line is a view pair 
@@ -6,12 +6,13 @@ import { View, Text, FlatList, TextInput, StyleSheet } from 'react-native';
 // the Text is a bullet unicode character
 // in the text input, on enter press a new entry is added
 function BulletedListInput() {
-  const [text, setText] = useState(['thing 1', 'thing 2']); 
+  const [text, setText] = useState(['']); 
   const [focusIndex, setFocusIndex] = useState(0);
+  const flatList = useRef(null);
 
   const handleEnterKey = (e, index) => {
     var newText = [...text];
-    newText.splice(index+1, 0, ' ');
+    newText.splice(index+1, 0, '');
     setFocusIndex(index+1);
     setText(newText);
   };
@@ -41,25 +42,25 @@ function BulletedListInput() {
   };
 
   const renderItem = ({item, index, _}) => {
-    // console.log('Index: ' + index);
-
-    return <View style={styles.container}>
+    return <View style={styles.pair}>
       <Text style={styles.bullet}>{'\u2022'}</Text>
       <TextInput
         autoFocus={index === focusIndex}
         style={styles.textInput}
-        value={item}
+        value={'' + item}
         onChangeText={(newTextValue) => updateText(newTextValue, index)}
         onSubmitEditing={(nativeEvent) => handleEnterKey(nativeEvent, index)}
         onKeyPress={(e) => handleKey(e, index)}
+        placeholder='Option'
       />
     </View>
   };
 
-  // console.log(focusIndex);
   return (
-    <View style={{flex: 1, borderWidth: 1, height: '60%'}}>
+    <View style={styles.container}>
       <FlatList 
+        ref={flatList}
+        onContentSizeChange={() => flatList.current.scrollToEnd()}
         extraData={focusIndex}
         data={text}
         renderItem={renderItem}
@@ -72,12 +73,21 @@ function BulletedListInput() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 20,
+    paddingTop: 20,
+    // position: 'absolute',
+    // bottom: 0,
+  },
+  pair: {
     display: 'flex',
     flexDirection: 'row',
-    borderWidth: 1,
     padding: 15,
     alignItems: 'center',
     width: '100%',
+    borderBottomWidth: 1,
   },
   bullet: {
     paddingRight: 5,
@@ -86,7 +96,6 @@ const styles = StyleSheet.create({
   textInput: {
     fontSize: 17,
     width: '80%',
-    borderWidth: 1,
   }
 });
 
