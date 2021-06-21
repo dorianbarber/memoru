@@ -23,6 +23,20 @@ function BulletedListInput() {
     setText(newText);
   };
 
+  const handleKey = (e, index) => {
+    if (e.nativeEvent.key === 'Backspace' 
+          && text[index] === ''
+          && text.length > 1) {
+      if (index > 0) {
+        setFocusIndex(index - 1);
+      }
+      var newText = [...text];
+      newText.splice(index, 1);
+      setText(newText);
+      
+    }
+  }
+
   const updateText = (newValue, index) => {
     if (newValue.slice(-1) === '\n') {
       return;
@@ -44,6 +58,7 @@ function BulletedListInput() {
         value={item}
         onChangeText={(newTextValue) => updateText(newTextValue, index)}
         onSubmitEditing={(nativeEvent) => handleEnterKey(nativeEvent, index)}
+        onKeyPress={(e) => handleKey(e, index)}
       />
     </View>
   };
