@@ -4,8 +4,10 @@ import FormPicker from './FormPicker.js';
 import LabelInput from './LabelInput.js';
 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import AntDesign from 'react-native-vector-icons/MaterialIcons';
 
 function LabelFormPair({ index, label, form, onChange, onDelete }) {
+  const [isStarred, setIsStarred] = useState(false);
 
   const handleLabelChange = (newLabel) => {
     onChange(index, newLabel, form);
@@ -17,6 +19,11 @@ function LabelFormPair({ index, label, form, onChange, onDelete }) {
 
   return (
     <View style={{display: 'flex', flexDirection: 'row'}}>
+      {
+        isStarred ? 
+          <AntDesign name='star' size={30} color='#696969'/> :
+          <AntDesign name='staro' size={30} color='#696969'/>
+      }
       <View style={styles.container}>
         <LabelInput
           label={label}
