@@ -19,6 +19,7 @@ function HomeHeader() {
   }, [])
 
   return (
+
     <View style={{ height: 140 }}>
       <Header
         placement='left'
