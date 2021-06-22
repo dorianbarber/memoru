@@ -6,7 +6,6 @@ import ItemCard from './ItemCard.js';
 function DatabaseItems({ data }) {
 
   const renderItem = ({item}) => {
-    console.log(item);
 
     return <ItemCard
       itemId={item.id}
@@ -34,7 +33,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
-    paddingTop: 20,
   },
 });
 

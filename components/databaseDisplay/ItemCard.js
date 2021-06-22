@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
     flex: 1,
     elevation: 2,
     height: 100,
+    width: 350,
     margin: 10,
     padding: 35,
     borderRadius: 20,
@@ -23,6 +24,7 @@ const styles = StyleSheet.create({
   itemId: {
     fontSize: 20,
     borderBottomWidth: 1,
+    paddingBottom: 5,
   }
 });
 
