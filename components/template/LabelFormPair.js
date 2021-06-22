@@ -5,7 +5,7 @@ import LabelInput from './LabelInput.js';
 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-function LabelFormPair({ index, label, form, onChange, onDelete }) {
+function LabelFormPair({ index, label, form, onChange, onDelete, isStarred, askForStar }) {
 
   const handleLabelChange = (newLabel) => {
     onChange(index, newLabel, form);
@@ -17,6 +17,20 @@ function LabelFormPair({ index, label, form, onChange, onDelete }) {
 
   return (
     <View style={{display: 'flex', flexDirection: 'row'}}>
+      {
+        isStarred 
+          ? <View style={styles.touchable}>
+              <MaterialIcons name='star' size={30} color='#696969'/>
+            </View> 
+          : <TouchableNativeFeedback 
+              onPress={() => askForStar(index)}
+            >
+              <View style={styles.touchable}>
+                <MaterialIcons name='star-border' size={30} color='#696969'/>
+              </View>
+            </TouchableNativeFeedback>
+      }
+      
       <View style={styles.container}>
         <LabelInput
           label={label}
@@ -46,7 +60,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     borderColor: '#696969',
-    width: '83%',
+    width: '78%',
     margin: 10,
   },
   touchable: {

@@ -8,7 +8,6 @@ function FieldInput({ index, form, data, onChange }) {
 
   const onDataChange = (newData) => {
     onChange(index, newData);
-    console.log(newData);
     setValue(newData);
   }
 

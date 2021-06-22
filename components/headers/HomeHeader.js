@@ -7,7 +7,7 @@ import HeaderText from './headerComponents/HeaderText.js';
 import HeaderButtons from './headerComponents/HeaderButtons.js';
 
 
-function HomeHeader() {
+function HomeHeader({optionsActive, setOptionsActive}) {
   // alternatively do not use state and pass 'Memoru' to HeaderText
   const [title, setTitle] = useState('');
 
@@ -19,12 +19,15 @@ function HomeHeader() {
   }, [])
 
   return (
+
     <View style={{ height: 140 }}>
       <Header
         placement='left'
         leftComponent={<MenuIcon />}
         centerComponent={<HeaderText title={title} setTitle={setTitle}/>}
-        rightComponent={<HeaderButtons/>}
+        rightComponent={<HeaderButtons 
+                        optionsActive={optionsActive} 
+                        setOptionsActive={setOptionsActive} />}
         containerStyle={styles.header}
         leftContainerStyle={{ alignItems: 'center' }}
       />

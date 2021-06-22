@@ -2,11 +2,13 @@ import React, {useState} from 'react'
 import { View, TouchableNativeFeedback, StyleSheet, Text } from 'react-native';
 
 import EntypoIcon from 'react-native-vector-icons/Entypo';
+import OptionsListNotes from './optionBtnOptions/OptionsListNotes'
+import OptionsListTemplate from './optionBtnOptions/OptionsListTemplate';
+import OptionsListHome from './optionBtnOptions/OptionsListHome';
 
-import OptionsList from './optionBtnOptions/OptionsList'
 
-function OptionsButton() {
-    const [optionsActive, setOptionsActive] = useState(false)
+function OptionsButton({homeHeaderBtnsActive, notesHeaderBtnsActive, optionsActive, setOptionsActive}) {
+    const [selectedId, setSelectedId] = useState(null)
 
     const onOptions = () => {
       if (!optionsActive) {
@@ -14,6 +16,26 @@ function OptionsButton() {
       } else {
         setOptionsActive(false)
       }
+    }
+
+    const onOptionPress = (id) => {
+        setOptionsActive(false)
+        setSelectedId(id)
+        console.log(id)
+    }
+
+    const multiOptionsListHandler = () => {
+        if(notesHeaderBtnsActive){
+          return <OptionsListNotes 
+                  setOptionsActive={setOptionsActive}
+                  onOptionPress={onOptionPress}
+                  />
+        } else {
+          return  <OptionsListHome 
+                  setOptionsActive={setOptionsActive}
+                  onOptionPress={onOptionPress}
+                 />
+        }
     }
 
 
@@ -27,7 +49,9 @@ function OptionsButton() {
               <EntypoIcon name='dots-three-vertical' size={25} color='white' />
           </View>
         </TouchableNativeFeedback>
-        {optionsActive && <OptionsList />}
+
+        {optionsActive && multiOptionsListHandler()}
+
       </View>  
     );
 }

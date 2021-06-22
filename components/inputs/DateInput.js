@@ -7,13 +7,11 @@ function DateInput({ onChange }) {
   const [showPicker, setShowPicker] = useState(false);
 
   const handleDateSelect = (_, newDate) => {
+    setShowPicker(false);
     onChange(newDate);
     const currentDate = newDate || date;
-    setShowPicker(false);
     setDate(currentDate);
   };
-
-  console.log(date);
 
   return (
     <View>

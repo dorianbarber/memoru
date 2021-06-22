@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { View, StyleSheet } from 'react-native';
 
 import { StatusBar } from 'expo-status-bar';
@@ -6,9 +6,14 @@ import HomeHeader from '../components/headers/HomeHeader.js';
 import HomeActionButton from '../components/buttons/HomeActionButton.js';
 
 function HomeScreen({ navigation }) {
+  const [optionsActive, setOptionsActive] = useState(false)
+
   return (
     <View style={styles.container}>
-      <HomeHeader/>
+      <HomeHeader
+        optionsActive={optionsActive}
+        setOptionsActive={setOptionsActive}
+        />
       <StatusBar
         style='light' 
         backgroundColor='#000'/>
