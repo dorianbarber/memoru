@@ -30,8 +30,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
-    color: '#fff',
-    // top: 15,
     width: 100,
   },
 });

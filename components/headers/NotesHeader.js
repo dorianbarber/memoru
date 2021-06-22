@@ -11,12 +11,11 @@ function NotesHeader({optionsActive, setOptionsActive}) {
 
   return (
     <View>
-        <Header
-        leftComponent={MenuIcon}
+      <Header
+        leftComponent={<MenuIcon/>}
         rightComponent={<NotesHeaderButtons 
                         optionsActive={optionsActive} 
-                        setOptionsActive={setOptionsActive}
-                        />}
+                        setOptionsActive={setOptionsActive} />}
         containerStyle={styles.header}
       />
       <View pointerEvents= {optionsActive ?'none' : 'auto'}>
@@ -41,7 +40,6 @@ const styles = StyleSheet.create({
     elevation: 1,
   },
   header: {
-    position: 'relative',
     backgroundColor: '#000',
     height: 90,
     borderWidth: 0,

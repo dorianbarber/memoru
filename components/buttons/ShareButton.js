@@ -30,7 +30,7 @@ const ShareButton = (props) => {
       background={TouchableNativeFeedback.Ripple('#696969', true)}
     >
       <View style={styles.touchable}>
-        <EntypoIcon name='share' size={20} color='white' />
+        <EntypoIcon name='share' size={25} color='white' />
       </View>
     </TouchableNativeFeedback>
   );

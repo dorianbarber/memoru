@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Header } from 'react-native-elements';
 
 import MenuIcon from './headerComponents/MenuIcon.js';
@@ -19,25 +19,26 @@ function HomeHeader() {
   }, [])
 
   return (
-    <Header
-      placement='left'
-      leftComponent={MenuIcon}
-      centerComponent={<HeaderText title={title} setTitle={setTitle}/>}
-      rightComponent={<HeaderButtons />}
-      containerStyle={styles.header}
-    />
+
+    <View style={{ height: 140 }}>
+      <Header
+        placement='left'
+        leftComponent={<MenuIcon />}
+        centerComponent={<HeaderText title={title} setTitle={setTitle}/>}
+        rightComponent={<HeaderButtons/>}
+        containerStyle={styles.header}
+        leftContainerStyle={{ alignItems: 'center' }}
+      />
+    </View>
   );  
 }
 
 
 const styles = StyleSheet.create({
-  //Entire header
   header: {
-    position: 'relative', //was absolute
-    display: 'flex',
     backgroundColor: '#000',
-    alignItems: 'baseline',
-    // height: 140,
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 });
 
