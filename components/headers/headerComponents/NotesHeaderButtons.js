@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
   },
   optionsBtns: {
     marginLeft: 3,
-    top: 5,
   },
   submitBtn:{
     justifyContent:'flex-end'

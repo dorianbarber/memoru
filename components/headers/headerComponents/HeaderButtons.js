@@ -5,7 +5,7 @@ import OptionsButton from '../../buttons/OptionsButton.js';
 import SearchButton from '../../buttons/SearchButton.js';
 import ShareButton from '../../buttons/ShareButton.js';
 
-function HeaderButtons() {
+function HeaderButtons({optionsActive, setOptionsActive}) {
   const [homeHeaderBtnsActive, setHomeHeaderBtnsActive] = useState(false)
 
   useEffect(() => {
@@ -19,7 +19,10 @@ function HeaderButtons() {
     <View style={styles.rightSideItems}>
       <ShareButton message='memoru is dope'/>
       <SearchButton />
-      <OptionsButton homeHeaderBtnsActive={homeHeaderBtnsActive}/>
+      <OptionsButton 
+      optionsActive={optionsActive} 
+      setOptionsActive={setOptionsActive}
+      homeHeaderBtnsActive={homeHeaderBtnsActive}/>
     </View>
   );
 }
