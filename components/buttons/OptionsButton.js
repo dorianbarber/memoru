@@ -7,8 +7,7 @@ import OptionsListTemplate from './optionBtnOptions/OptionsListTemplate';
 import OptionsListHome from './optionBtnOptions/OptionsListHome';
 
 
-function OptionsButton({homeHeaderBtnsActive, notesHeaderBtnsActive}) {
-    const [optionsActive, setOptionsActive] = useState(false)
+function OptionsButton({homeHeaderBtnsActive, notesHeaderBtnsActive, optionsActive, setOptionsActive}) {
     const [selectedId, setSelectedId] = useState(null)
 
     const onOptions = () => {

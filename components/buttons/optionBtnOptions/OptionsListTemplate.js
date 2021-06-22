@@ -79,17 +79,23 @@ const styles = StyleSheet.create({
         borderColor: '#323232',
         flex: 1,
 
-        // elevation: 20,
+        zIndex: 100,
+        elevation: 100,
     },
     item:{
         padding: 15,
         backgroundColor: '#323232',
         borderBottomColor: 'black',
         borderBottomWidth: 2,
+
+        zIndex: 100,
+        elevation: 100,
     },
     optionName: {
         color: 'white',
         fontSize: 13,
+        zIndex: 100,
+        elevation: 100,
     }
 
 });

@@ -6,7 +6,7 @@ import OptionsButton from '../../buttons/OptionsButton.js';
 import SubmitButton from '../../buttons/SubmitButton.js';
 
 
-function NotesHeaderButtons() {
+function NotesHeaderButtons({optionsActive, setOptionsActive}) {
     const [notesHeaderBtnsActive, setNotesHeaderBtnsActive] = useState(false)
 
     useEffect(() => {
@@ -20,7 +20,10 @@ function NotesHeaderButtons() {
         <View style={styles.rightSideItems}>
             <ShareButton message='these notes are DOPE'/>
             <View style={styles.optionsBtns}>    
-                <OptionsButton notesHeaderBtnsActive={notesHeaderBtnsActive}/>
+                <OptionsButton 
+                optionsActive={optionsActive} 
+                setOptionsActive={setOptionsActive}
+                notesHeaderBtnsActive={notesHeaderBtnsActive}/>
             </View>
             <View style={styles.submitBtn}>
                 <SubmitButton />
@@ -36,6 +39,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     color: '#fff',
     width: 120,
+
+    zIndex: 100,
+    elevation: 100,
   },
   optionsBtns: {
     marginLeft: 3,

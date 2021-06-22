@@ -6,13 +6,22 @@ import NotesHeader from '../components/headers/NotesHeader.js'
 import Notes from '../components/notes/Notes.js';
 
 function NotesScreen() {
-  [text, setText] = useState('');
+  const [text, setText] = useState('');
+  const [optionsActive, setOptionsActive] = useState(false)
 
   return (
     <View style={styles.container}>
       <View style={styles.notesPageContainer}>
-        <NotesHeader />
-        <Notes text={text} onChangeText={setText}/>
+        <NotesHeader 
+        optionsActive={optionsActive}
+        setOptionsActive={setOptionsActive}
+        />
+        <Notes 
+        text={text} 
+        onChangeText={setText}
+        optionsActive={optionsActive}
+        setOptionsActive={setOptionsActive}
+        />
       </View>
       <StatusBar
         style='light' 

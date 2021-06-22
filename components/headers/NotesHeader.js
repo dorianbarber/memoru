@@ -6,25 +6,28 @@ import MenuIcon from './headerComponents/MenuIcon.js';
 import NotesHeaderButtons from './headerComponents/NotesHeaderButtons';
 
 
-
-function NotesHeader() {
+function NotesHeader({optionsActive, setOptionsActive}) {
   const [notesTitle, onNotesChangeTitle] = useState('');
-
 
   return (
     <View>
-      <Header
+        <Header
         leftComponent={MenuIcon}
-        rightComponent={<NotesHeaderButtons />}
+        rightComponent={<NotesHeaderButtons 
+                        optionsActive={optionsActive} 
+                        setOptionsActive={setOptionsActive}
+                        />}
         containerStyle={styles.header}
       />
-      <TextInput
-        style={styles.input}
-        onChangeText={onNotesChangeTitle}
-        value={notesTitle}
-        placeholder='Title'
-        placeholderTextColor='#696969'
-      />
+      <View pointerEvents= {optionsActive ?'none' : 'auto'}>
+        <TextInput
+          style={styles.input}
+          onChangeText={onNotesChangeTitle}
+          value={notesTitle}
+          placeholder='Title'
+          placeholderTextColor='#696969'
+        />
+      </View>
     </View>
   )
 }
@@ -33,23 +36,30 @@ function NotesHeader() {
 const styles = StyleSheet.create({
   container: {
     height: 140,
+    
+    zIndex: 1,
+    elevation: 1,
   },
   header: {
     position: 'relative',
     backgroundColor: '#000',
     height: 90,
     borderWidth: 0,
-    elevation: 10,
+
+    zIndex: 3,
+    elevation: 3,
   },
   input: {
-    elevation: 3,
     height: 50,
     color: 'white',
-    backgroundColor: 'black',
+    backgroundColor: '#000',
     paddingLeft: 50,
     paddingTop: 8,
     paddingBottom: 5,
     fontSize: 35,
+
+    zIndex: 1,
+    elevation: 1,
   },
 });
 

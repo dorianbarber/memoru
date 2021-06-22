@@ -1,10 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { View, StyleSheet, TextInput } from 'react-native';
 
 
-function Notes({ text, onChangeText }) {
+function Notes({ text, onChangeText, optionsActive, setOptionsActive }) {
+
   return (
-    <View style={styles.inputContainer}>
+    <View 
+    pointerEvents= {optionsActive ?'none' : 'auto'} >
       <TextInput 
         style={styles.input}
         onChangeText={onChangeText}
@@ -17,12 +19,10 @@ function Notes({ text, onChangeText }) {
 }
 
 const styles = StyleSheet.create({
-  inputContainer: {
-    elevation: 10
-  },
   input: {
     padding: 30,
     fontSize: 20,
+    backgroundColor: 'white',
   }
 });
 
