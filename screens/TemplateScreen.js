@@ -8,11 +8,16 @@ import Template from '../components/template/Template.js';
 
 function TemplateScreen() {
   const [templateList, setTemplateList] = useState(null);
+  const [starredItem, setStar] = useState(0);
+
+  const askForStar = (index) => {
+    setStar(index);
+  }
 
   return (
     <View style={styles.container}>
       <TemplateHeader templateList={templateList}/>
-      <Template templateList={templateList} setTemplateList={setTemplateList}/>
+      <Template templateList={templateList} setTemplateList={setTemplateList} starredItem={starredItem} askForStar={askForStar}/>
       <StatusBar
         style='light' 
         backgroundColor='#000'

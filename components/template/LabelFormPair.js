@@ -6,8 +6,7 @@ import LabelInput from './LabelInput.js';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AntDesign from 'react-native-vector-icons/MaterialIcons';
 
-function LabelFormPair({ index, label, form, onChange, onDelete }) {
-  const [isStarred, setIsStarred] = useState(false);
+function LabelFormPair({ index, label, form, onChange, onDelete, isStarred, askForStar }) {
 
   const handleLabelChange = (newLabel) => {
     onChange(index, newLabel, form);
@@ -19,15 +18,20 @@ function LabelFormPair({ index, label, form, onChange, onDelete }) {
 
   return (
     <View style={{display: 'flex', flexDirection: 'row'}}>
-      <TouchableNativeFeedback>
-        <View style={styles.touchable}>
-          {
-            isStarred ? 
-              <MaterialIcons name='star' size={30} color='#696969'/> :
-              <MaterialIcons name='star-border' size={30} color='#696969'/>
-          }
-        </View>
-      </TouchableNativeFeedback>
+      {
+        isStarred 
+          ? <View style={styles.touchable}>
+              <MaterialIcons name='star' size={30} color='#696969'/>
+            </View> 
+          : <TouchableNativeFeedback 
+              onPress={() => askForStar(index)}
+            >
+              <View style={styles.touchable}>
+                <MaterialIcons name='star-border' size={30} color='#696969'/>
+              </View>
+            </TouchableNativeFeedback>
+      }
+      
       <View style={styles.container}>
         <LabelInput
           label={label}

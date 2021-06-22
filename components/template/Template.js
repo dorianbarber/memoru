@@ -14,7 +14,7 @@ const baseItem = () => (
   }
 );
 
-function Template({templateList, setTemplateList}) {
+function Template({templateList, setTemplateList, starredItem, askForStar}) {
 
   const flatList = useRef(null);
 
@@ -41,6 +41,9 @@ function Template({templateList, setTemplateList}) {
       return item;
     });
     setTemplateList(newTemplateList);
+    if (starredItem !== 0 && starredItem >= index) {
+      askForStar(starredItem - 1);
+    }
   };
  
   const renderItem = ({item, x, y}) => (
@@ -50,6 +53,8 @@ function Template({templateList, setTemplateList}) {
       form={item.form} 
       onChange={updateField}
       onDelete={() => deleteItemByIndex(item.index)}
+      isStarred={item.index === starredItem}
+      askForStar={askForStar}
     />
   );
 
