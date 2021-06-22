@@ -102,6 +102,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     marginRight: 15,
     marginBottom: 10,
+    paddingTop: 10,
+    paddingRight: 5,
   },
 });
 

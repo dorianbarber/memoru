@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, TouchableNativeFeedback, View } from 'react-native';
 import FormPicker from './FormPicker.js';
 import LabelInput from './LabelInput.js';
@@ -19,11 +19,15 @@ function LabelFormPair({ index, label, form, onChange, onDelete }) {
 
   return (
     <View style={{display: 'flex', flexDirection: 'row'}}>
-      {
-        isStarred ? 
-          <AntDesign name='star' size={30} color='#696969'/> :
-          <AntDesign name='staro' size={30} color='#696969'/>
-      }
+      <TouchableNativeFeedback>
+        <View style={styles.touchable}>
+          {
+            isStarred ? 
+              <MaterialIcons name='star' size={30} color='#696969'/> :
+              <MaterialIcons name='star-border' size={30} color='#696969'/>
+          }
+        </View>
+      </TouchableNativeFeedback>
       <View style={styles.container}>
         <LabelInput
           label={label}
@@ -53,7 +57,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     borderColor: '#696969',
-    width: '83%',
+    width: '78%',
     margin: 10,
   },
   touchable: {
