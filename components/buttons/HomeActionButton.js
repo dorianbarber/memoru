@@ -27,6 +27,13 @@ function HomeActionButton({ navigation }) {
       >
         <MaterialCommunityIcons name='plus' size={20} color ='white'/>
       </ActionButton.Item>
+      <ActionButton.Item 
+        buttonColor='#141414' 
+        title='Database screen with ANIME example'
+        onPress={() => navigation.navigate('DatabaseDisplay')}
+      >
+        <MaterialCommunityIcons name='plus' size={20} color ='white'/>
+      </ActionButton.Item>
     </ActionButton>
   );
 }

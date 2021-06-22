@@ -5,6 +5,7 @@ import NotesScreen from './screens/NotesScreen.js';
 import NewItemScreen from './screens/NewItemScreen.js';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import DatabaseScreen from './screens/DatabaseScreen.js';
 
 console.disableYellowBox = true;
 
@@ -21,6 +22,7 @@ export default function App() {
         <Stack.Screen name='TemplateBuilder' component={TemplateScreen}/>
         <Stack.Screen name='ClassicNotes' component={NotesScreen}/>
         <Stack.Screen name='NewItem' component={NewItemScreen}/>
+        <Stack.Screen name='DatabaseDisplay' component={DatabaseScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
