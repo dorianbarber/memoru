@@ -6,7 +6,7 @@ function postNewTemplate( user, templateList, title) {
   const userTemplateDB = db.collection('users').doc(user).collection('template');
 
   if (userTemplateDB) {
-    userTemplateDB.doc(`${title}`).set({templateList})
+    userTemplateDB.doc(`${title}`).set(templateList)
     .then( () => {
       console.log('template set');
       console.log(title);

@@ -16,7 +16,7 @@ function TemplateScreen() {
 
   return (
     <View style={styles.container}>
-      <TemplateHeader templateList={templateList}/>
+      <TemplateHeader templateList={templateList} starredItem={starredItem}/>
       <Template templateList={templateList} setTemplateList={setTemplateList} starredItem={starredItem} askForStar={askForStar}/>
       <StatusBar
         style='light' 
