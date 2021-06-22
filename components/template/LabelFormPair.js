@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, TouchableNativeFeedback, View } from 'react-native';
 import FormPicker from './FormPicker.js';
 import LabelInput from './LabelInput.js';
 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import AntDesign from 'react-native-vector-icons/MaterialIcons';
 
 function LabelFormPair({ index, label, form, onChange, onDelete, isStarred, askForStar }) {
 

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect} from 'react';
+import React, { useRef, useEffect} from 'react';
 import { View, FlatList, StyleSheet, TouchableNativeFeedback } from 'react-native';
 import LabelFormPair from './LabelFormPair.js';
 
