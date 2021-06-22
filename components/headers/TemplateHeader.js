@@ -6,7 +6,7 @@ import MenuIcon from './headerComponents/MenuIcon.js';
 import TemplateHeaderButtons from './headerComponents/TemplateHeaderButtons.js';
 
 
-function TemplateHeader({templateList}) {
+function TemplateHeader({templateList, starredItem}) {
   const [title, onChangeTitle] = useState('');
 
   return (
@@ -15,6 +15,7 @@ function TemplateHeader({templateList}) {
         leftComponent={<MenuIcon />}
         rightComponent={<TemplateHeaderButtons 
                           templateList={templateList} 
+                          starredItem={starredItem}
                           title={title}
                       />}
         containerStyle={styles.header}
