@@ -10,10 +10,10 @@ function NotesScreen() {
 
   return (
     <View style={styles.container}>
-      <NotesHeader text={text}/>
-      <Notes text={text} setText={setText}/>
+      <NotesHeader text={text} />
+      <Notes text={text} setText={setText} />
       <StatusBar
-        style='light' 
+        style='light'
         backgroundColor='#000'
       />
     </View>

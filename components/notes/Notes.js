@@ -4,7 +4,7 @@ import { StyleSheet, TextInput } from 'react-native';
 
 function Notes({ text, setText }) {
   return (
-    <TextInput 
+    <TextInput
       style={styles.input}
       onChangeText={setText}
       value={text}
@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
   input: {
     padding: 30,
     fontSize: 20,
+    // backgroundColor: 'red',
   }
 });
 

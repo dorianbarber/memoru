@@ -1,19 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, TextInput } from 'react-native';
 import { Header } from 'react-native-elements';
 
 import MenuIcon from './headerComponents/MenuIcon.js';
 import NotesHeaderButtons from './headerComponents/NotesHeaderButtons';
+import { postNewNotes } from '../../firebase/posts'
 
 
-function NotesHeader({text}) {
-  const[title, onChangeTitle] = useState('')
+function NotesHeader({ text }) {
+  const [title, onChangeTitle] = useState('')
+
+  useEffect(() => {
+    postNewNotes('userTest' /*User*/,
+      title ? title : 'temporary', //If title is empty, title becomes today's date
+      text)
+  }, [text])
 
   return (
     <View>
       <Header
-        leftComponent={<MenuIcon/>}
-        rightComponent={<NotesHeaderButtons title={title} text={text}/>}
+        leftComponent={<MenuIcon />}
+        rightComponent={<NotesHeaderButtons title={title} text={text} />}
         containerStyle={styles.header}
       />
       <TextInput
