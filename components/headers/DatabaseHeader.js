@@ -23,7 +23,7 @@ function DatabaseHeader({ title, optionsActive, setOptionsActive }) {
 
 const styles = StyleSheet.create({
   container: {
-    height: 140,
+    height: 90,
   },
   header: {
     position: 'relative',

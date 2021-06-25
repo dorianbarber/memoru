@@ -35,10 +35,10 @@ function DatabaseScreen({ title='Anime' }) {
         title={title}
         optionsActive={optionsActive}
         setOptionsActive={setOptionsActive}
-        />
-        <DatabaseItems
-          data={data}
-        />
+      />
+      <DatabaseItems
+        data={data}
+      />
       <StatusBar
         style='light' 
         backgroundColor='#000'/>
@@ -50,7 +50,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    // paddingTop: 30,
   },
 });
 

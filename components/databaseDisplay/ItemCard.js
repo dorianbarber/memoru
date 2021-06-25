@@ -12,14 +12,7 @@ function ItemCard({ itemId, data }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    elevation: 2,
-    height: 100,
-    width: 350,
-    margin: 10,
     padding: 35,
-    borderRadius: 20,
-    backgroundColor: 'white',
   },
   itemId: {
     fontSize: 20,
