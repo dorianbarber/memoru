@@ -16,7 +16,7 @@ function DatabaseScreen({ title='Anime' }) {
       const response = await getAllItems('userTest', title);
       var freshData = [];
       response.forEach(doc => {
-        console.log(doc.data());
+        // console.log(doc.data());
         freshData.push({id: doc.id, data: doc.data()});
       });
       setData(freshData);
