@@ -1,6 +1,32 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
+function buildPreviewSwitch(data) {
+  switch(data.form) {
+    case 'fraction': 
+      return <Text style={styles.previewText}>{data.data.num + ' / ' + data.data.denom}</Text>;
+    case 'date':
+      const date = new Date(data.data);
+      return <Text style={styles.previewText}>{(date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear()}</Text>;
+    default:
+      return <Text style={styles.previewText}>{data.data}</Text>;
+  }
+}
+
+const buildPreview = (data) => {
+  if (!data.data) {
+    return null;
+  }
+  return (
+    <View style={styles.previewField}>
+      <Text style={styles.previewText}>{data.label}</Text>
+      {
+        buildPreviewSwitch(data)
+      }
+    </View>
+  )
+}
+
 function ItemCard({ itemId, data }) {
   
   const dataPreview = (data) => {
@@ -8,16 +34,7 @@ function ItemCard({ itemId, data }) {
     console.log(previewData);
     return <View>
       {
-        previewData.map((item) => 
-          <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={styles.previewText}>{item.label}</Text>
-            {
-              item.form !== 'fraction' 
-              ? <Text style={styles.previewText}>{item.data}</Text>
-              : <Text style={styles.previewText}>{item.data.num + ' / ' + item.data.denom}</Text>
-            }
-          </View>
-        )
+        previewData.map((item) => buildPreview(item))
       }
     </View>;
   };
@@ -47,6 +64,11 @@ const styles = StyleSheet.create({
   previewText: {
     color: '#696969',
     fontSize: 15,
+  },
+  previewField: {
+    display: 'flex', 
+    flexDirection: 'row', 
+    justifyContent: 'space-between',
   },
 });
 
