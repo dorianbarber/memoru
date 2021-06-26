@@ -13,11 +13,15 @@ function ItemCard({ itemId, data }) {
 const styles = StyleSheet.create({
   container: {
     padding: 35,
+    backgroundColor: '#272727',
+    margin: 10,
+    borderRadius: 20,
+    elevation: 2,
   },
   itemId: {
     fontSize: 20,
-    borderBottomWidth: 1,
     paddingBottom: 5,
+    color: '#c4c4c4',
   }
 });
 
