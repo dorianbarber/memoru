@@ -12,7 +12,6 @@ function NotesHeader({optionsActive, setOptionsActive}) {
   return (
     <View>
       <Header
-        leftComponent={<MenuIcon/>}
         rightComponent={<NotesHeaderButtons 
                         optionsActive={optionsActive} 
                         setOptionsActive={setOptionsActive} />}
@@ -35,7 +34,6 @@ function NotesHeader({optionsActive, setOptionsActive}) {
 const styles = StyleSheet.create({
   container: {
     height: 140,
-    
     zIndex: 1,
     elevation: 1,
   },
@@ -51,10 +49,10 @@ const styles = StyleSheet.create({
     height: 50,
     color: 'white',
     backgroundColor: '#000',
-    paddingLeft: 50,
+    paddingLeft: 25,
     paddingTop: 8,
     paddingBottom: 5,
-    fontSize: 35,
+    fontSize: 33,
 
     zIndex: 1,
     elevation: 1,

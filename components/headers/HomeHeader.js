@@ -20,11 +20,10 @@ function HomeHeader({optionsActive, setOptionsActive}) {
 
   return (
 
-    <View style={{ height: 140 }}>
+    <View>
       <Header
         placement='left'
-        leftComponent={<MenuIcon />}
-        centerComponent={<HeaderText title={title} setTitle={setTitle}/>}
+        leftComponent={<HeaderText title={title} setTitle={setTitle}/>}
         rightComponent={<HeaderButtons 
                         optionsActive={optionsActive} 
                         setOptionsActive={setOptionsActive} />}
@@ -41,6 +40,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
     justifyContent: 'space-between',
     alignItems: 'center',
+    height: 100,
   },
 });
 
