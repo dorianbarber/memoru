@@ -16,12 +16,10 @@ function DatabaseItems({ data }) {
   return (
     <View style={styles.container}>
       {
-        data 
-        ? <FlatList
-            data={data}
-            renderItem={renderItem}
-          />
-        : <Text>{'No data'}</Text>
+        data && <FlatList
+          data={data}
+          renderItem={renderItem}
+        />
       }
     </View>
   );
