@@ -39,7 +39,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     color: '#fff',
     width: 120,
-
     zIndex: 100,
     elevation: 100,
   },

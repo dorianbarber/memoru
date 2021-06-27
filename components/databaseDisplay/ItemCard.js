@@ -51,18 +51,23 @@ function ItemCard({ itemId, data }) {
 const styles = StyleSheet.create({
   container: {
     padding: 35,
-    backgroundColor: '#272727',
+    // backgroundColor: '#272727',
+    backgroundColor: '#fff',
     margin: 10,
     borderRadius: 20,
+    borderWidth: 1,
+    borderColor: '#c4c4c4',
     elevation: 2,
   },
   itemId: {
     fontSize: 20,
     paddingBottom: 5,
-    color: '#c4c4c4',
+    // color: '#c4c4c4',
+    color: '#000',
   },
   previewText: {
     color: '#696969',
+    // color: '#000',
     fontSize: 15,
   },
   previewField: {
