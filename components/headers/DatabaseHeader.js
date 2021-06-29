@@ -2,16 +2,18 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { Header } from 'react-native-elements';
 
-import NewItemHeaderButtons from './headerComponents/NewItemHeaderButtons.js';
+import HeaderButtons from './headerComponents/HeaderButtons.js';
 
-
-function NewItemHeader({ title, data, starredItem }) {
-
+function DatabaseHeader({ title, optionsActive, setOptionsActive }) {
   return (
     <View style={styles.container}>
       <Header
         centerComponent={<Text style={styles.title}>{title}</Text>}
-        rightComponent={<NewItemHeaderButtons title={title} fields={data} starredItem={starredItem}/>}
+        rightComponent={
+          <HeaderButtons 
+            optionsActive={optionsActive}
+            setOptionsActive={setOptionsActive}
+          />}
         containerStyle={styles.header}
       />
     </View>
@@ -21,7 +23,7 @@ function NewItemHeader({ title, data, starredItem }) {
 
 const styles = StyleSheet.create({
   container: {
-    height: 140,
+    height: 90,
   },
   header: {
     position: 'relative',
@@ -43,4 +45,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NewItemHeader;
+export default DatabaseHeader;

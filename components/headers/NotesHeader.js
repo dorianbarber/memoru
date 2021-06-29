@@ -7,7 +7,7 @@ import NotesHeaderButtons from './headerComponents/NotesHeaderButtons';
 import { postNewNotes } from '../../firebase/posts'
 
 
-function NotesHeader({ text }) {
+function NotesHeader({ text, optionsActive, setOptionsActive }) {
   const [title, onChangeTitle] = useState('')
 
   //useEffect saves notes on text change (too many firebase writes)
@@ -22,16 +22,21 @@ function NotesHeader({ text }) {
     <View>
       <Header
         leftComponent={<MenuIcon />}
-        rightComponent={<NotesHeaderButtons title={title} text={text} />}
+        rightComponent={<NotesHeaderButtons title={title} text={text} 
+                         optionsActive={optionsActive} 
+                         setOptionsActive={setOptionsActive}
+                        />}
         containerStyle={styles.header}
       />
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeTitle}
-        value={title}
-        placeholder='Title'
-        placeholderTextColor='#696969'
-      />
+      <View pointerEvents= {optionsActive ?'none' : 'auto'}>
+        <TextInput
+          style={styles.input}
+          onChangeText={onNotesChangeTitle}
+          value={notesTitle}
+          placeholder='Title'
+          placeholderTextColor='#696969'
+        />
+      </View>
     </View>
   )
 }
@@ -40,19 +45,28 @@ function NotesHeader({ text }) {
 const styles = StyleSheet.create({
   container: {
     height: 140,
+    zIndex: 1,
+    elevation: 1,
   },
   header: {
     backgroundColor: '#000',
+    height: 90,
+    borderWidth: 0,
+
+    zIndex: 3,
+    elevation: 3,
   },
   input: {
-    position: 'relative',
     height: 50,
     color: 'white',
-    backgroundColor: 'black',
-    paddingLeft: 50,
+    backgroundColor: '#000',
+    paddingLeft: 25,
     paddingTop: 8,
     paddingBottom: 5,
-    fontSize: 35,
+    fontSize: 33,
+
+    zIndex: 1,
+    elevation: 1,
   },
 });
 

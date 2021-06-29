@@ -1,15 +1,17 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import ShareButton from '../../buttons/ShareButton.js';
 import SubmitButton from '../../buttons/SubmitButton.js';
 import { postNewTemplate } from '../../../firebase/posts';
 
-function TemplateHeaderButtons({templateList, title}) {
+function TemplateHeaderButtons({templateList, title, starredItem}) {
+
   return (
     <View style={styles.rightSideItems}>
       <ShareButton message='template is dope'/>
-      <SubmitButton onSubmit={() => postNewTemplate('userTest' /*User*/, templateList, title)}/>
+      <SubmitButton onSubmit={() => postNewTemplate('userTest', {starredItem: starredItem, template: templateList}, title)}/>
+
     </View>
   );
 }

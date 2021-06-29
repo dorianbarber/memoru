@@ -5,11 +5,11 @@ import ShareButton from '../../buttons/ShareButton.js';
 import SubmitButton from '../../buttons/SubmitButton.js';
 import { postNewItem } from '../../../firebase/posts';
 
-function NewItemHeaderButtons({ title, fields }) {
+function NewItemHeaderButtons({ title, fields, starredItem }) {
   return (
     <View style={styles.rightSideItems}>
       <ShareButton message='new items are dope'/>
-      <SubmitButton onSubmit={() => postNewItem('userTest', title, fields[0].data , fields)}/>
+      <SubmitButton onSubmit={() => postNewItem('userTest', title, fields[starredItem].data , fields)}/>
     </View>
   );
 }
