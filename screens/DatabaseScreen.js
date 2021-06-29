@@ -7,9 +7,10 @@ import DatabaseItems from '../components/databaseDisplay/DatabaseItems.js';
 
 import { getAllItems } from '../firebase/gets';
 
-function DatabaseScreen({ title='Anime' }) {
+function DatabaseScreen({ route }) {
   const [optionsActive, setOptionsActive] = useState(false);
   const [data, setData] = useState(null);
+  const { title } = route.params;
 
   useEffect(() => {
     async function fetchData() {

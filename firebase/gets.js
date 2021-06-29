@@ -6,4 +6,9 @@ function getAllItems(user, collection) {
   return dbCollection.get();
 }
 
-export { getAllItems };
+function getAllTemplates(user) {
+  const dbCollection = db.collection('users').doc(user).collection('template');
+  return dbCollection.get();
+}
+
+export { getAllItems, getAllTemplates };
