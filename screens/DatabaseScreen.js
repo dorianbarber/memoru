@@ -7,7 +7,7 @@ import DatabaseItems from '../components/databaseDisplay/DatabaseItems.js';
 
 import { getAllItems } from '../firebase/gets';
 
-function DatabaseScreen({ route, navigation }) {
+function DatabaseScreen({ route }) {
   const [optionsActive, setOptionsActive] = useState(false);
   const [data, setData] = useState(null);
   const { title } = route.params;

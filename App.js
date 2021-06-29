@@ -15,14 +15,14 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator 
-        initialRouteName='Home'
+        initialRouteName='HomeScreen'
         screenOptions={{ headerShown: false }}
       >
-        <Stack.Screen name='Home' component={HomeScreen}/>
-        <Stack.Screen name='TemplateBuilder' component={TemplateScreen}/>
-        <Stack.Screen name='ClassicNotes' component={NotesScreen}/>
-        <Stack.Screen name='NewItem' component={NewItemScreen}/>
-        <Stack.Screen name='DatabaseDisplay' component={DatabaseScreen}/>
+        <Stack.Screen name='HomeScreen' component={HomeScreen}/>
+        <Stack.Screen name='TemplateScreen' component={TemplateScreen}/>
+        <Stack.Screen name='NotesScreen' component={NotesScreen}/>
+        <Stack.Screen name='NewItemScreen' component={NewItemScreen}/>
+        <Stack.Screen name='DatabaseScreen' component={DatabaseScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -9,28 +9,21 @@ function HomeActionButton({ navigation }) {
       <ActionButton.Item 
         buttonColor='#1B1B1B'
         title='New Template'
-        onPress={() => navigation.navigate('TemplateBuilder')}
+        onPress={() => navigation.navigate('TemplateScreen')}
       >
         <MaterialCommunityIcons name='database-plus' size={20} color ='white' />
       </ActionButton.Item>
       <ActionButton.Item 
         buttonColor='#141414' 
         title='Classic Notes'
-        onPress={() => navigation.navigate('ClassicNotes')}
+        onPress={() => navigation.navigate('NotesScreen')}
       >
         <MaterialCommunityIcons name='pencil' size={20} color ='white'/>
       </ActionButton.Item>
       <ActionButton.Item 
         buttonColor='#141414' 
         title='New Item Page TESTING'
-        onPress={() => navigation.navigate('NewItem')}
-      >
-        <MaterialCommunityIcons name='plus' size={20} color ='white'/>
-      </ActionButton.Item>
-      <ActionButton.Item 
-        buttonColor='#141414' 
-        title='Database screen with ANIME example'
-        onPress={() => navigation.navigate('DatabaseDisplay')}
+        onPress={() => navigation.navigate('NewItemScreen')}
       >
         <MaterialCommunityIcons name='plus' size={20} color ='white'/>
       </ActionButton.Item>

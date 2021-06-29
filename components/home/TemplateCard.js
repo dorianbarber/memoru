@@ -5,7 +5,7 @@ function TemplateCard({ navigation, templateId }) {
   return (
     <View style={styles.container}>
       <TouchableNativeFeedback 
-        onPress={() => navigation.navigate('DatabaseDisplay', { title: templateId })}
+        onPress={() => navigation.navigate('DatabaseScreen', { title: templateId })}
       >
         <Text style={styles.templateTitle}>
           { templateId }
