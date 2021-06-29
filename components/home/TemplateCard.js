@@ -14,6 +14,8 @@ function TemplateCard({ templateId }) {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
+    margin: 10,
+    backgroundColor: '#fff',
     borderRadius: 20,
     borderWidth: 1,
     borderColor: '#c4c4c4',

@@ -4,7 +4,7 @@ import { View, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import HomeHeader from '../components/headers/HomeHeader.js';
 import HomeActionButton from '../components/buttons/HomeActionButton.js';
-
+import TemplateList from '../components/home/TemplateList.js';
 import { getAllTemplates } from '../firebase/gets';
 
 function HomeScreen({ navigation }) {
@@ -29,6 +29,7 @@ function HomeScreen({ navigation }) {
         optionsActive={optionsActive}
         setOptionsActive={setOptionsActive}
         />
+      <TemplateList templateTitles={templates} />
       <StatusBar
         style='light' 
         backgroundColor='#000'/>
