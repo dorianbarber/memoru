@@ -2,23 +2,24 @@ import React, {useState, useEffect} from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import ShareButton from '../../buttons/ShareButton.js';
-import OptionsButton from '../../buttons/OptionsButton.js';
 import SubmitButton from '../../buttons/SubmitButton.js';
+import OptionsButton from '../../buttons/OptionsButton.js';
+import { postNewNotes } from '../../../firebase/posts';
 
 
-function NotesHeaderButtons({optionsActive, setOptionsActive}) {
-    const [notesHeaderBtnsActive, setNotesHeaderBtnsActive] = useState(false)
+function NotesHeaderButtons({title, text, optionsActive, setOptionsActive}) {
+     const [notesHeaderBtnsActive, setNotesHeaderBtnsActive] = useState(false)
 
     useEffect(() => {
         setNotesHeaderBtnsActive(true)
         return() => {
-            setNotesHeaderBtnsActive(false)
+        setNotesHeaderBtnsActive(false)
         }
     }, [])
-
+  
     return (
         <View style={styles.rightSideItems}>
-            <ShareButton message='these notes are DOPE'/>
+            <ShareButton message='these notes are DOPE'/>  
             <View style={styles.optionsBtns}>    
                 <OptionsButton 
                 optionsActive={optionsActive} 
@@ -26,7 +27,11 @@ function NotesHeaderButtons({optionsActive, setOptionsActive}) {
                 notesHeaderBtnsActive={notesHeaderBtnsActive}/>
             </View>
             <View style={styles.submitBtn}>
-                <SubmitButton />
+              <SubmitButton onSubmit={() => postNewNotes(
+                                            'userTest' /*User*/, 
+                                            title ? title : 'TBD', //If title is empty, title becomes today's date
+                                            text)
+                                    }/>
             </View>
         </View>
     )

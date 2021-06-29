@@ -11,6 +11,7 @@ function TemplateHeaderButtons({templateList, title, starredItem}) {
     <View style={styles.rightSideItems}>
       <ShareButton message='template is dope'/>
       <SubmitButton onSubmit={() => postNewTemplate('userTest', {starredItem: starredItem, template: templateList}, title)}/>
+
     </View>
   );
 }

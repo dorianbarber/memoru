@@ -11,20 +11,22 @@ function NotesScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.notesPageContainer}>
-        <NotesHeader 
+     <View style={styles.notesPageContainer}>
+      <NotesHeader 
+        text={text}
         optionsActive={optionsActive}
         setOptionsActive={setOptionsActive}
-        />
-        <Notes 
+         />
+      <Notes 
         text={text} 
         onChangeText={setText}
         optionsActive={optionsActive}
         setOptionsActive={setOptionsActive}
         />
-      </View>
+   </View>
+
       <StatusBar
-        style='light' 
+        style='light'
         backgroundColor='#000'
       />
     </View>

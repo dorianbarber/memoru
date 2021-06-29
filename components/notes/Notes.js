@@ -2,14 +2,14 @@ import React, {useState} from 'react'
 import { View, StyleSheet, TextInput } from 'react-native';
 
 
-function Notes({ text, onChangeText, optionsActive, setOptionsActive }) {
 
+function Notes({ text, setText, optionsActive, setOptionsActive }) {
   return (
     <View 
     pointerEvents= {optionsActive ?'none' : 'auto'} >
-      <TextInput 
+      <TextInput
         style={styles.input}
-        onChangeText={onChangeText}
+        onChangeText={setText}
         value={text}
         multiline={true}
         placeholder={'Content'}
