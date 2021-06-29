@@ -31,8 +31,8 @@ function NotesHeader({ text, optionsActive, setOptionsActive }) {
       <View pointerEvents= {optionsActive ?'none' : 'auto'}>
         <TextInput
           style={styles.input}
-          onChangeText={onNotesChangeTitle}
-          value={notesTitle}
+          onChangeText={onChangeTitle}
+          value={title}
           placeholder='Title'
           placeholderTextColor='#696969'
         />
@@ -44,7 +44,6 @@ function NotesHeader({ text, optionsActive, setOptionsActive }) {
 
 const styles = StyleSheet.create({
   container: {
-    height: 140,
     zIndex: 1,
     elevation: 1,
   },
@@ -57,14 +56,12 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   input: {
-    height: 50,
     color: 'white',
     backgroundColor: '#000',
     paddingLeft: 25,
     paddingTop: 8,
     paddingBottom: 5,
     fontSize: 33,
-
     zIndex: 1,
     elevation: 1,
   },
