@@ -1,4 +1,5 @@
 import React from 'react';
+import { LogBox } from 'react-native';
 import HomeScreen from './screens/HomeScreen.js';
 import TemplateScreen from './screens/TemplateScreen.js';
 import NotesScreen from './screens/NotesScreen.js';
@@ -7,7 +8,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import DatabaseScreen from './screens/DatabaseScreen.js';
 
-console.disableYellowBox = true;
+LogBox.ignoreAllLogs(true);
+LogBox.ignoreLogs(['Setting a timer']);
 
 const Stack = createStackNavigator();
 
