@@ -10,11 +10,13 @@ import { postNewNotes } from '../../firebase/posts'
 function NotesHeader({ text }) {
   const [title, onChangeTitle] = useState('')
 
-  useEffect(() => {
-    postNewNotes('userTest' /*User*/,
-      title ? title : 'temporary', //If title is empty, title becomes today's date
-      text)
-  }, [text])
+  //useEffect saves notes on text change (too many firebase writes)
+  
+  // useEffect(() => {
+  //   postNewNotes('userTest' /*User*/,
+  //     title ? title : 'temporary', //If title is empty, title becomes today's date
+  //     text)
+  // }, [text])
 
   return (
     <View>

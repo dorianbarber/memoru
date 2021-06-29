@@ -12,7 +12,7 @@ function NotesHeaderButtons({title, text}) {
             <ShareButton message='these notes are DOPE'/>
             <SubmitButton onSubmit={() => postNewNotes(
                                             'userTest' /*User*/, 
-                                            title ? title : `${Date.now()}`, //If title is empty, title becomes today's date
+                                            title ? title : 'TBD', //If title is empty, title becomes today's date
                                             text)
                                     }/>
         </View>
