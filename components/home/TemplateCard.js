@@ -1,12 +1,16 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, TouchableNativeFeedback } from 'react-native';
 
-function TemplateCard({ templateId }) {
+function TemplateCard({ navigation, templateId }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.templateTitle}>
-        { templateId }
-      </Text>
+      <TouchableNativeFeedback 
+        onPress={() => navigation.navigate('DatabaseDisplay', { title: templateId })}
+      >
+        <Text style={styles.templateTitle}>
+          { templateId }
+        </Text>
+      </TouchableNativeFeedback>
     </View>
   );
 }

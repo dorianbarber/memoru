@@ -29,7 +29,10 @@ function HomeScreen({ navigation }) {
         optionsActive={optionsActive}
         setOptionsActive={setOptionsActive}
         />
-      <TemplateList templateTitles={templates} />
+      <TemplateList 
+        navigation={navigation}
+        templateTitles={templates} 
+      />
       <StatusBar
         style='light' 
         backgroundColor='#000'/>
